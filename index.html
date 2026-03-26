@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cliento — Digital Growth Partner</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #1e6aff;
+      --teal: #00e5c0;
+      --cyan: #00c6ff;
+      --dark: #060d1a;
+      --dark2: #0c1728;
+      --surface: #0f1e35;
+      --border: rgba(0,198,255,0.12);
+      --text: #e2eaf8;
+      --muted: #7a93b8;
+      --grad: linear-gradient(135deg, var(--blue), var(--teal));
+      --grad2: linear-gradient(90deg, var(--blue), var(--cyan), var(--teal));
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--dark); color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 17px; line-height: 1.65; overflow-x: hidden; }
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-thumb { background: var(--blue); border-radius: 2px; }
+
+```
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 6%;
+  background: rgba(6,13,26,0.85); backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.25rem; background: var(--grad2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-decoration: none; }
+.nav-cta { background: var(--grad); color: #000; font-weight: 700; font-size: 0.88rem; padding: 10px 22px; border-radius: 100px; text-decoration: none; transition: opacity 0.2s, transform 0.2s; }
+.nav-cta:hover { opacity: 0.85; transform: scale(1.03); }
+
+/* HERO */
+#hero { min-height: 100vh; display: flex; align-items: center; padding: 120px 6% 80px; background: radial-gradient(ellipse 70% 60% at 60% 40%, rgba(0,198,255,0.07) 0%, transparent 60%), radial-gradient(ellipse 40% 50% at 5% 80%, rgba(30,106,255,0.07) 0%, transparent 50%); position: relative; overflow: hidden; }
+.grid-lines { position: absolute; inset: 0; background-image: linear-gradient(rgba(0,198,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,198,255,0.04) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(ellipse at center, black 20%, transparent 75%); }
+.hero-inner { position: relative; max-width: 680px; }
+.badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(0,229,192,0.08); border: 1px solid rgba(0,229,192,0.2); color: var(--teal); padding: 6px 16px; border-radius: 100px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 26px; }
+.badge::before { content: ''; width: 7px; height: 7px; background: var(--teal); border-radius: 50%; animation: blink 1.6s infinite; }
+h1 { font-family: 'Syne', sans-serif; font-size: clamp(2.5rem, 5.5vw, 4rem); font-weight: 800; line-height: 1.08; letter-spacing: -0.02em; margin-bottom: 22px; }
+.grad-text { background: var(--grad2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.hero-sub { font-size: 1.1rem; color: var(--muted); max-width: 520px; margin-bottom: 40px; }
+.ctas { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.btn-main { display: inline-flex; align-items: center; gap: 9px; background: var(--grad); color: #000; font-weight: 700; font-size: 1rem; padding: 15px 30px; border-radius: 13px; text-decoration: none; box-shadow: 0 0 40px rgba(0,198,255,0.18); transition: transform 0.2s, box-shadow 0.2s; }
+.btn-main:hover { transform: translateY(-2px); box-shadow: 0 8px 40px rgba(0,198,255,0.32); }
+.btn-out { display: inline-flex; align-items: center; gap: 9px; background: transparent; color: var(--text); font-weight: 600; font-size: 1rem; padding: 14px 26px; border-radius: 13px; text-decoration: none; border: 1px solid var(--border); transition: border-color 0.2s, color 0.2s; }
+.btn-out:hover { border-color: var(--teal); color: var(--teal); }
+.hero-stats { display: flex; gap: 36px; margin-top: 52px; flex-wrap: wrap; }
+.stat-num { font-family: 'Syne', sans-serif; font-size: 1.8rem; font-weight: 800; background: var(--grad2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.stat-label { font-size: 0.8rem; color: var(--muted); font-weight: 500; }
+
+/* SECTIONS */
+section { padding: 90px 6%; }
+.sec-label { display: inline-flex; align-items: center; gap: 8px; color: var(--teal); font-size: 0.76rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 14px; }
+.sec-label::before { content: ''; width: 18px; height: 2px; background: var(--teal); }
+h2 { font-family: 'Syne', sans-serif; font-size: clamp(1.8rem, 3.5vw, 2.7rem); font-weight: 800; line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 14px; }
+.sec-sub { color: var(--muted); font-size: 1rem; max-width: 500px; margin-bottom: 50px; }
+
+/* PROBLEMA */
+#problema { background: var(--dark2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+#problema .inner { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.pain-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+.pain-item { display: flex; align-items: flex-start; gap: 14px; background: rgba(255,50,50,0.05); border: 1px solid rgba(255,50,50,0.1); border-radius: 13px; padding: 18px; }
+.pain-icon { font-size: 1.2rem; min-width: 26px; text-align: center; }
+.pain-text strong { display: block; font-weight: 600; margin-bottom: 2px; font-size: 0.97rem; }
+.pain-text span { color: var(--muted); font-size: 0.88rem; }
+.data-box { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 36px; }
+.big-num { font-family: 'Syne', sans-serif; font-size: 4.5rem; font-weight: 800; line-height: 1; background: var(--grad2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 10px; }
+.data-box p { color: var(--muted); font-size: 0.97rem; line-height: 1.7; }
+.data-box p strong { color: var(--text); }
+
+/* SERVIZI */
+#servizi { background: var(--dark); }
+#servizi .inner { max-width: 1080px; margin: 0 auto; }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.s-card { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 28px 24px; position: relative; overflow: hidden; transition: transform 0.3s, border-color 0.3s; }
+.s-card::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--grad2); opacity: 0; transition: opacity 0.3s; }
+.s-card:hover { transform: translateY(-5px); border-color: rgba(0,198,255,0.22); }
+.s-card:hover::after { opacity: 1; }
+.s-icon { font-size: 1.6rem; margin-bottom: 14px; }
+.s-card h3 { font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
+.s-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.65; }
+
+/* PACCHETTI */
+#pacchetti { background: var(--dark2); border-top: 1px solid var(--border); }
+#pacchetti .inner { max-width: 1000px; margin: 0 auto; }
+.pkg-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: stretch; }
+.pkg { background: var(--surface); border: 1px solid var(--border); border-radius: 22px; padding: 32px 26px; display: flex; flex-direction: column; position: relative; transition: transform 0.3s; }
+.pkg:hover { transform: translateY(-5px); }
+.pkg.hot { border-color: rgba(0,198,255,0.35); background: linear-gradient(155deg, rgba(30,106,255,0.1), rgba(0,229,192,0.04)); }
+.hot-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--grad); color: #000; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 14px; border-radius: 100px; white-space: nowrap; }
+.pkg-lv { font-size: 0.73rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 6px; }
+.pkg h3 { font-family: 'Syne', sans-serif; font-size: 1.35rem; font-weight: 800; margin-bottom: 6px; }
+.pkg-desc { color: var(--muted); font-size: 0.88rem; margin-bottom: 22px; }
+.pkg-feats { list-style: none; flex: 1; display: flex; flex-direction: column; gap: 10px; margin-bottom: 26px; }
+.pkg-feats li { display: flex; gap: 9px; align-items: flex-start; font-size: 0.91rem; }
+.pkg-feats li::before { content: '✓'; color: var(--teal); font-weight: 800; min-width: 14px; font-size: 0.82rem; margin-top: 2px; }
+.pkg-btn { display: block; text-align: center; padding: 13px; border-radius: 11px; font-weight: 700; font-size: 0.92rem; text-decoration: none; transition: all 0.2s; }
+.pkg-btn-ghost { border: 1px solid var(--border); color: var(--text); }
+.pkg-btn-ghost:hover { border-color: var(--teal); color: var(--teal); }
+.pkg-btn-main { background: var(--grad); color: #000; }
+.pkg-btn-main:hover { box-shadow: 0 6px 28px rgba(0,198,255,0.28); }
+
+/* STEPS */
+#steps { background: var(--dark); }
+#steps .inner { max-width: 760px; margin: 0 auto; }
+.step-list { display: flex; flex-direction: column; gap: 0; position: relative; }
+.step-list::before { content: ''; position: absolute; left: 24px; top: 36px; bottom: 36px; width: 2px; background: linear-gradient(to bottom, var(--blue), var(--teal)); }
+.step { display: flex; gap: 28px; align-items: flex-start; padding: 28px 0; }
+.step + .step { border-top: 1px solid var(--border); }
+.step-n { min-width: 50px; height: 50px; background: var(--grad); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.1rem; color: #000; flex-shrink: 0; position: relative; z-index: 1; box-shadow: 0 0 24px rgba(0,198,255,0.22); }
+.step h3 { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 5px; }
+.step p { color: var(--muted); font-size: 0.94rem; line-height: 1.7; }
+
+/* CONTATTI */
+#contatti { background: var(--dark2); border-top: 1px solid var(--border); }
+#contatti .inner { max-width: 640px; margin: 0 auto; text-align: center; }
+.form-wrap { text-align: left; margin-top: 40px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+input, textarea, select { width: 100%; background: var(--surface); border: 1px solid var(--border); border-radius: 11px; padding: 14px 16px; color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 0.95rem; outline: none; transition: border-color 0.2s; }
+input:focus, textarea:focus, select:focus { border-color: rgba(0,198,255,0.45); }
+input::placeholder, textarea::placeholder { color: var(--muted); }
+textarea { height: 110px; resize: none; margin-bottom: 12px; }
+select { cursor: pointer; margin-bottom: 12px; }
+select option { background: var(--dark2); }
+.privacy-check { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 18px; }
+.privacy-check input[type="checkbox"] { width: auto; min-width: 16px; height: 16px; margin-top: 3px; accent-color: var(--teal); cursor: pointer; }
+.privacy-check label { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
+.privacy-check a { color: var(--teal); text-decoration: none; }
+.privacy-check a:hover { text-decoration: underline; }
+.form-btn { width: 100%; padding: 16px; background: var(--grad); border: none; border-radius: 13px; color: #000; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1rem; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
+.form-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 36px rgba(0,198,255,0.28); }
+.or-divider { text-align: center; color: var(--muted); font-size: 0.85rem; margin: 22px 0; position: relative; }
+.or-divider::before, .or-divider::after { content: ''; position: absolute; top: 50%; width: 42%; height: 1px; background: var(--border); }
+.or-divider::before { left: 0; } .or-divider::after { right: 0; }
+.email-link { display: flex; align-items: center; justify-content: center; gap: 10px; background: var(--surface); border: 1px solid var(--border); border-radius: 13px; padding: 16px; color: var(--text); text-decoration: none; font-weight: 600; transition: border-color 0.2s, color 0.2s; }
+.email-link:hover { border-color: var(--teal); color: var(--teal); }
+
+/* FOOTER */
+footer { background: var(--dark); border-top: 1px solid var(--border); padding: 32px 6%; }
+.footer-inner { max-width: 1080px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+.footer-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.1rem; background: var(--grad2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.footer-links { display: flex; gap: 22px; flex-wrap: wrap; }
+.footer-links a { color: var(--muted); font-size: 0.82rem; text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--teal); }
+footer p { color: var(--muted); font-size: 0.82rem; }
+
+/* MODALS */
+.modal-overlay { display: none; position: fixed; inset: 0; z-index: 500; background: rgba(6,13,26,0.92); backdrop-filter: blur(8px); align-items: center; justify-content: center; padding: 20px; }
+.modal-overlay.open { display: flex; }
+.modal { background: var(--dark2); border: 1px solid var(--border); border-radius: 20px; max-width: 680px; width: 100%; max-height: 82vh; overflow-y: auto; padding: 40px 36px; position: relative; }
+.modal h3 { font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 800; margin-bottom: 20px; }
+.modal h4 { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; margin: 20px 0 8px; color: var(--teal); }
+.modal p, .modal li { color: var(--muted); font-size: 0.9rem; line-height: 1.75; }
+.modal ul { padding-left: 18px; margin-top: 6px; }
+.modal-close { position: absolute; top: 16px; right: 16px; background: var(--surface); border: 1px solid var(--border); color: var(--text); width: 34px; height: 34px; border-radius: 50%; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: border-color 0.2s; }
+.modal-close:hover { border-color: var(--teal); color: var(--teal); }
+
+/* COOKIE BANNER */
+.cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; z-index: 400; background: rgba(12,23,40,0.97); backdrop-filter: blur(12px); border-top: 1px solid var(--border); padding: 20px 6%; display: none; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+.cookie-banner.show { display: flex; }
+.cookie-banner p { color: var(--muted); font-size: 0.85rem; max-width: 640px; line-height: 1.6; }
+.cookie-banner a { color: var(--teal); text-decoration: none; }
+.cookie-btns { display: flex; gap: 10px; flex-shrink: 0; }
+.cookie-accept { background: var(--grad); color: #000; font-weight: 700; font-size: 0.85rem; padding: 10px 22px; border-radius: 100px; border: none; cursor: pointer; }
+.cookie-decline { background: transparent; color: var(--muted); font-size: 0.85rem; padding: 10px 16px; border-radius: 100px; border: 1px solid var(--border); cursor: pointer; transition: color 0.2s; }
+.cookie-decline:hover { color: var(--text); }
+
+/* FLOATING */
+.float-email { position: fixed; bottom: 28px; right: 28px; z-index: 300; display: flex; align-items: center; gap: 10px; background: var(--grad); color: #000; font-weight: 700; font-size: 0.88rem; padding: 13px 22px; border-radius: 100px; box-shadow: 0 8px 36px rgba(30,106,255,0.3); text-decoration: none; animation: pulse 2.5s infinite; transition: transform 0.2s; }
+.float-email:hover { transform: scale(1.05); }
+
+/* TOAST */
+#toast { position: fixed; bottom: 90px; left: 50%; transform: translateX(-50%) translateY(16px); background: var(--grad); color: #000; padding: 13px 26px; border-radius: 100px; font-weight: 700; font-size: 0.92rem; z-index: 999; opacity: 0; transition: all 0.4s; pointer-events: none; white-space: nowrap; }
+
+/* REVEAL */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+@keyframes blink { 0%,100% { opacity:1; } 50% { opacity:0.2; } }
+@keyframes pulse { 0%,100% { box-shadow: 0 8px 36px rgba(30,106,255,0.3); } 50% { box-shadow: 0 8px 52px rgba(0,229,192,0.4); } }
+
+/* RESPONSIVE */
+@media (max-width: 860px) {
+  #problema .inner { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .pkg-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
+  .form-row { grid-template-columns: 1fr; }
+  .nav-cta { display: none; }
+}
+@media (max-width: 580px) {
+  section { padding: 70px 5%; }
+  .services-grid { grid-template-columns: 1fr; }
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.75rem; }
+  .float-email .label { display: none; }
+  .footer-inner { flex-direction: column; text-align: center; }
+  .footer-links { justify-content: center; }
+  .modal { padding: 28px 20px; }
+  .hero-stats { gap: 22px; }
+}
+```
+
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="#">CLIENTO</a>
+  <a class="nav-cta" href="#contatti">Contattaci →</a>
+</nav>
+
+<!-- HERO -->
+
+<section id="hero">
+  <div class="grid-lines"></div>
+  <div class="hero-inner">
+    <div class="badge">Digital Growth Partner</div>
+    <h1>Più clienti per<br>la tua <span class="grad-text">attività locale</span></h1>
+    <p class="hero-sub">Sito web, Google, contatti diretti — costruiamo la tua presenza online e ti portiamo nuovi clienti ogni giorno. Tu pensa al tuo lavoro.</p>
+    <div class="ctas">
+      <a href="#contatti" class="btn-main">🚀 Voglio più clienti</a>
+      <a href="#pacchetti" class="btn-out">Vedi i pacchetti →</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-num">+300%</div><div class="stat-label">Visibilità su Google</div></div>
+      <div><div class="stat-num">48h</div><div class="stat-label">Per essere online</div></div>
+      <div><div class="stat-num">Zero</div><div class="stat-label">Tecnicismi per te</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMA -->
+
+<section id="problema">
+  <div class="inner">
+    <div>
+      <div class="sec-label reveal">Il problema</div>
+      <h2 class="reveal">Stai perdendo clienti<br><span class="grad-text">ogni giorno</span></h2>
+      <p class="sec-sub reveal">Senza una presenza online curata, i tuoi potenziali clienti vanno direttamente dai tuoi concorrenti.</p>
+      <ul class="pain-list">
+        <li class="pain-item reveal"><div class="pain-icon">🔍</div><div class="pain-text"><strong>Non ti trovano su Google</strong><span>Chi cerca la tua attività online non ti vede — e sceglie qualcun altro.</span></div></li>
+        <li class="pain-item reveal"><div class="pain-icon">💻</div><div class="pain-text"><strong>Sito web assente o vecchio</strong><span>Un sito lento o brutto su telefono allontana i clienti prima che leggano chi sei.</span></div></li>
+        <li class="pain-item reveal"><div class="pain-icon">📵</div><div class="pain-text"><strong>Impossibile contattarti facilmente</strong><span>Se non hai un sistema di contatto diretto, molti rinunciano e passano oltre.</span></div></li>
+      </ul>
+    </div>
+    <div class="reveal">
+      <div class="data-box">
+        <div class="big-num">76%</div>
+        <p>dei consumatori <strong>cerca online</strong> un'attività locale prima di visitarla. Se non sei presente, perdi <strong>3 clienti su 4</strong>.</p>
+      </div>
+      <div class="data-box" style="margin-top: 16px; background: linear-gradient(135deg, rgba(30,106,255,0.08), rgba(0,229,192,0.04));">
+        <div class="big-num" style="font-size: 3.5rem;">92%</div>
+        <p>delle ricerche locali avviene <strong>da smartphone</strong>. Se il tuo sito non funziona su telefono, praticamente non esisti.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIZI -->
+
+<section id="servizi">
+  <div class="inner">
+    <div class="sec-label reveal">Cosa facciamo</div>
+    <h2 class="reveal">La tua crescita, <span class="grad-text">su misura</span></h2>
+    <p class="sec-sub reveal">Tutto il necessario per trasformare la tua presenza online in un motore di acquisizione clienti.</p>
+    <div class="services-grid">
+      <div class="s-card reveal"><div class="s-icon">🌐</div><h3>Sito web professionale</h3><p>Veloce, bello e ottimizzato per telefono. Costruito per convincere, non solo per essere presente.</p></div>
+      <div class="s-card reveal"><div class="s-icon">📍</div><h3>Google Business</h3><p>Ti facciamo comparire su Google Maps quando qualcuno cerca la tua categoria nella tua zona.</p></div>
+      <div class="s-card reveal"><div class="s-icon">📈</div><h3>SEO Locale</h3><p>Saliamo in cima ai risultati di ricerca nella tua città. Più visibilità, più chiamate.</p></div>
+      <div class="s-card reveal"><div class="s-icon">💬</div><h3>Sistemi di contatto</h3><p>Email e form di contatto integrati: i clienti ti raggiungono in pochi secondi.</p></div>
+      <div class="s-card reveal"><div class="s-icon">⭐</div><h3>Gestione recensioni</h3><p>Più recensioni positive = più fiducia. Ti aiutiamo a costruire la tua reputazione online.</p></div>
+      <div class="s-card reveal"><div class="s-icon">📊</div><h3>Report mensile</h3><p>Ogni mese sai quante persone ti hanno trovato e quanti contatti hai ricevuto. In italiano semplice.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PACCHETTI -->
+
+<section id="pacchetti">
+  <div class="inner">
+    <div class="sec-label reveal">Pacchetti</div>
+    <h2 class="reveal">Tre livelli, <span class="grad-text">un obiettivo</span></h2>
+    <p class="sec-sub reveal">Niente costi nascosti. Scegli il piano adatto alla tua attività.</p>
+    <div class="pkg-grid">
+      <div class="pkg reveal">
+        <div class="pkg-lv">🌱 Base</div>
+        <h3>Presenza Online</h3>
+        <p class="pkg-desc">Parti da zero e mettiti in vetrina sul web.</p>
+        <ul class="pkg-feats">
+          <li>Sito web (1 pagina)</li>
+          <li>Google Business ottimizzato</li>
+          <li>Form di contatto attivo</li>
+          <li>Dominio + hosting inclusi</li>
+          <li>Assistenza via email</li>
+        </ul>
+        <a href="#contatti" class="pkg-btn pkg-btn-ghost">Inizia da qui</a>
+      </div>
+      <div class="pkg hot reveal">
+        <div class="hot-badge">⚡ Più scelto</div>
+        <div class="pkg-lv">🚀 Crescita</div>
+        <h3>Crescita Locale</h3>
+        <p class="pkg-desc">Per chi vuole clienti nuovi ogni mese, con continuità.</p>
+        <ul class="pkg-feats">
+          <li>Sito web multi-pagina</li>
+          <li>SEO locale ottimizzata</li>
+          <li>Google Business + aggiornamenti</li>
+          <li>Gestione recensioni</li>
+          <li>Report mensile chiaro</li>
+          <li>Supporto dedicato</li>
+        </ul>
+        <a href="#contatti" class="pkg-btn pkg-btn-main">Voglio crescere</a>
+      </div>
+      <div class="pkg reveal">
+        <div class="pkg-lv">👑 Premium</div>
+        <h3>Dominio Locale</h3>
+        <p class="pkg-desc">Per diventare il punto di riferimento nella tua zona.</p>
+        <ul class="pkg-feats">
+          <li>Sito web completo e avanzato</li>
+          <li>SEO potenziata</li>
+          <li>Campagne Google & Meta</li>
+          <li>Social media gestiti</li>
+          <li>Consulenza mensile 1:1</li>
+          <li>Supporto prioritario 7/7</li>
+        </ul>
+        <a href="#contatti" class="pkg-btn pkg-btn-ghost">Parliamo</a>
+      </div>
+    </div>
+    <p style="text-align:center; margin-top:24px; color: var(--muted); font-size: 0.88rem;">Non sai quale scegliere? <a href="#contatti" style="color: var(--teal); font-weight: 600;">Scrivici</a> — ti consigliamo noi, senza impegno.</p>
+  </div>
+</section>
+
+<!-- COME FUNZIONA -->
+
+<section id="steps">
+  <div class="inner">
+    <div class="sec-label reveal">Come funziona</div>
+    <h2 class="reveal">Tre passi e sei <span class="grad-text">operativo</span></h2>
+    <p class="sec-sub reveal">Nessuna riunione infinita. Partiamo subito.</p>
+    <div class="step-list">
+      <div class="step reveal"><div class="step-n">1</div><div><h3>Ci contatti e parliamo</h3><p>Scrivici via email o compila il form. In 15 minuti capiamo cosa ti serve. Zero tecnicismi, parola.</p></div></div>
+      <div class="step reveal"><div class="step-n">2</div><div><h3>Costruiamo tutto noi</h3><p>Sito, Google, contatti: ci pensiamo noi. In 48 ore sei online. Approvi tu il risultato finale.</p></div></div>
+      <div class="step reveal"><div class="step-n">3</div><div><h3>Arrivano i clienti</h3><p>Ogni mese ricevi un report semplice con i risultati. Noi ottimizziamo, tu incassi.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATTI -->
+
+<section id="contatti">
+  <div class="inner">
+    <div class="sec-label reveal" style="justify-content:center;">Contatti</div>
+    <h2 class="reveal">Inizia oggi.<br><span class="grad-text">Senza impegno.</span></h2>
+    <p style="color: var(--muted); font-size: 1rem; margin-bottom: 0;" class="reveal">Compila il form oppure scrivici direttamente all'email. Rispondiamo entro poche ore.</p>
+    <div class="form-wrap reveal">
+      <form onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <input type="text" placeholder="Il tuo nome *" required />
+          <input type="text" placeholder="Tipo di attività (es. Bar)" />
+        </div>
+        <input type="email" placeholder="La tua email *" required style="margin-bottom:12px;" />
+        <select>
+          <option value="" disabled selected>Di cosa hai bisogno?</option>
+          <option>Voglio più clienti dalla mia zona</option>
+          <option>Devo creare o migliorare il mio sito</option>
+          <option>Voglio apparire su Google Maps</option>
+          <option>Non so da dove iniziare</option>
+        </select>
+        <textarea placeholder="Raccontaci qualcosa di più (opzionale)..."></textarea>
+        <div class="privacy-check">
+          <input type="checkbox" id="privacy" required />
+          <label for="privacy">Ho letto e accetto la <a href="#" onclick="openModal(event,'privacy')">Privacy Policy</a> e acconsento al trattamento dei miei dati personali per ricevere risposta alla mia richiesta.</label>
+        </div>
+        <button type="submit" class="form-btn">📩 Invia la richiesta — è gratuita</button>
+      </form>
+      <div class="or-divider">oppure</div>
+      <a href="mailto:clientostudio26@gmail.com" class="email-link">✉️ clientostudio26@gmail.com</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">CLIENTO</div>
+      <p style="margin-top:4px;">Digital Growth Partner per attività locali</p>
+    </div>
+    <div class="footer-links">
+      <a href="#" onclick="openModal(event,'privacy')">Privacy Policy</a>
+      <a href="#" onclick="openModal(event,'cookie')">Cookie Policy</a>
+      <a href="#" onclick="openModal(event,'termini')">Termini di servizio</a>
+      <a href="mailto:clientostudio26@gmail.com">clientostudio26@gmail.com</a>
+    </div>
+    <p>© 2025 Cliento. Tutti i diritti riservati.</p>
+  </div>
+</footer>
+
+<!-- FLOATING EMAIL -->
+
+<a href="mailto:clientostudio26@gmail.com" class="float-email">
+  <span>✉️</span> <span class="label">Scrivici subito</span>
+</a>
+
+<!-- TOAST -->
+
+<div id="toast">✅ Richiesta inviata! Ti contatteremo presto.</div>
+
+<!-- COOKIE BANNER -->
+
+<div class="cookie-banner" id="cookieBanner">
+  <p>Utilizziamo cookie tecnici per il corretto funzionamento del sito. Nessun dato viene venduto a terzi. Leggi la <a href="#" onclick="openModal(event,'cookie')">Cookie Policy</a> e la <a href="#" onclick="openModal(event,'privacy')">Privacy Policy</a>.</p>
+  <div class="cookie-btns">
+    <button class="cookie-decline" onclick="closeCookie()">Solo necessari</button>
+    <button class="cookie-accept" onclick="closeCookie()">Accetto tutto</button>
+  </div>
+</div>
+
+<!-- MODAL PRIVACY -->
+
+<div class="modal-overlay" id="modal-privacy">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('privacy')">✕</button>
+    <h3>Privacy Policy</h3>
+    <p><strong>Titolare del trattamento:</strong> Cliento — Digital Growth Partner<br>Email: clientostudio26@gmail.com</p>
+    <h4>Dati raccolti</h4>
+    <p>Raccogliamo esclusivamente i dati che fornisci volontariamente tramite il form di contatto: nome, email, tipo di attività e messaggio. Vengono utilizzati unicamente per rispondere alla tua richiesta.</p>
+    <h4>Base giuridica</h4>
+    <p>Il trattamento si basa sul consenso espresso dall'utente (art. 6, par. 1, lett. a del GDPR) al momento dell'invio del form di contatto.</p>
+    <h4>Conservazione dei dati</h4>
+    <p>I dati sono conservati per il tempo strettamente necessario a gestire la richiesta e, successivamente, per un massimo di 12 mesi, salvo diverso accordo scritto.</p>
+    <h4>Condivisione con terzi</h4>
+    <p>I tuoi dati non vengono venduti né ceduti a terzi. Possono essere trattati da fornitori tecnici (es. servizi email) che operano come responsabili del trattamento ai sensi del GDPR.</p>
+    <h4>I tuoi diritti</h4>
+    <p>Hai diritto di accedere, rettificare, cancellare i tuoi dati, opporti al trattamento e richiedere la portabilità. Per esercitare questi diritti scrivi a: <strong>clientostudio26@gmail.com</strong></p>
+    <h4>Reclami</h4>
+    <p>Hai il diritto di proporre reclamo al Garante per la protezione dei dati personali (www.garanteprivacy.it).</p>
+  </div>
+</div>
+
+<!-- MODAL COOKIE -->
+
+<div class="modal-overlay" id="modal-cookie">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('cookie')">✕</button>
+    <h3>Cookie Policy</h3>
+    <p>Questo sito utilizza cookie per garantire il corretto funzionamento e migliorare l'esperienza di navigazione.</p>
+    <h4>Cookie tecnici (necessari)</h4>
+    <p>Indispensabili per il funzionamento del sito. Non richiedono consenso e non raccolgono dati personali identificabili.</p>
+    <h4>Cookie analitici (anonimi)</h4>
+    <p>Raccolgono dati statistici in forma anonima per migliorare il sito. Non vengono trasmessi a piattaforme pubblicitarie di terze parti.</p>
+    <h4>Nessun cookie di profilazione</h4>
+    <p>Non utilizziamo cookie di profilazione né condividiamo dati con inserzionisti o social network per scopi pubblicitari.</p>
+    <h4>Come disabilitarli</h4>
+    <p>Puoi configurare il tuo browser per rifiutare i cookie. Alcune funzionalità del sito potrebbero non funzionare correttamente senza cookie tecnici.</p>
+  </div>
+</div>
+
+<!-- MODAL TERMINI -->
+
+<div class="modal-overlay" id="modal-termini">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('termini')">✕</button>
+    <h3>Termini di Servizio</h3>
+    <p>Utilizzando questo sito o richiedendo i servizi di Cliento, accetti i seguenti termini.</p>
+    <h4>Servizi offerti</h4>
+    <p>Cliento offre servizi di marketing digitale per attività locali: siti web, ottimizzazione Google Business, SEO locale, gestione contatti e reportistica mensile.</p>
+    <h4>Preventivi e contratti</h4>
+    <p>Ogni accordo commerciale è formalizzato tramite preventivo scritto accettato dal cliente. Nessun vincolo contrattuale prima dell'accettazione.</p>
+    <h4>Proprietà intellettuale</h4>
+    <p>I materiali prodotti da Cliento diventano di proprietà del cliente a pagamento avvenuto, salvo diverso accordo scritto.</p>
+    <h4>Limitazione di responsabilità</h4>
+    <p>Cliento si impegna a operare con professionalità e a perseguire gli obiettivi concordati. I risultati in termini di traffico e conversioni dipendono anche da fattori esterni non controllabili.</p>
+    <h4>Legge applicabile</h4>
+    <p>I presenti termini sono regolati dalla legge italiana. Per qualsiasi controversia è competente il Foro del luogo di residenza del Titolare.</p>
+    <h4>Contatti</h4>
+    <p>Per qualsiasi richiesta: <strong>clientostudio26@gmail.com</strong></p>
+  </div>
+</div>
+
+<script>
+  // Scroll reveal
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // Nav scroll
+  window.addEventListener('scroll', () => {
+    document.querySelector('nav').style.background =
+      window.scrollY > 50 ? 'rgba(6,13,26,0.97)' : 'rgba(6,13,26,0.85)';
+  });
+
+  // Form submit
+  function handleSubmit(e) {
+    e.preventDefault();
+    const toast = document.getElementById('toast');
+    toast.style.opacity = '1';
+    toast.style.transform = 'translateX(-50%) translateY(0)';
+    setTimeout(() => {
+      toast.style.opacity = '0';
+      toast.style.transform = 'translateX(-50%) translateY(16px)';
+    }, 3500);
+    e.target.reset();
+  }
+
+  // Modals
+  function openModal(e, id) {
+    e.preventDefault();
+    document.getElementById('modal-' + id).classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(id) {
+    document.getElementById('modal-' + id).classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.querySelectorAll('.modal-overlay').forEach(m => {
+    m.addEventListener('click', e => {
+      if (e.target === m) { m.classList.remove('open'); document.body.style.overflow = ''; }
+    });
+  });
+
+  // Cookie
+  if (!localStorage.getItem('cookieOk')) {
+    document.getElementById('cookieBanner').classList.add('show');
+  }
+  function closeCookie() {
+    localStorage.setItem('cookieOk', '1');
+    document.getElementById('cookieBanner').classList.remove('show');
+  }
+</script>
+
+</body>
+</html>
