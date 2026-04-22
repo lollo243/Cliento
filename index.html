@@ -434,7 +434,7 @@
       display: block;
     }
 
-/* MANTIENE LA PARTE SCURA SOPRA */
+/* CONTENITORI IMMAGINI */
 .fidelity-wrap,
 .catalogo-wrap {
   padding: 40px 25px 0;
@@ -444,12 +444,7 @@
   justify-content: center;
   align-items: flex-start;
 
-  background: linear-gradient(
-    180deg,
-    #05070f 0%,
-    #060914 55%,
-    transparent 100%
-  );
+  background: transparent;   /* elimina box sotto */
 }
 
 /* IMMAGINI */
@@ -462,24 +457,30 @@
   display: block;
   object-fit: cover;
 
-  border-radius: 22px;
+  border-radius: 22px;   /* bordi tondi reali */
   overflow: hidden;
 
-  border: none;
-  padding: 0;
+  border: none;          /* rimuove cornice */
+  padding: 0;            /* rimuove box interno */
 
   box-shadow: 0 14px 34px rgba(0,0,0,0.22);
 }
 
-/* CATALOGO PIÙ LARGO */
+/* SOLO CATALOGO se vuoi più grande */
 .catalogo-img {
   max-width: 360px;
 }
 
-/* RIMUOVE SOLO BOX ATTORNO FOTO */
-.catalogo-wrap::before,
-.fidelity-wrap::before {
-  display: none;
+/* IMPORTANTISSIMO:
+se hai un box genitore con background */
+.project-image,
+.card-image,
+.thumb,
+.preview-box,
+.image-wrap {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
 }
    
 
