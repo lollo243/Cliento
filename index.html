@@ -434,55 +434,29 @@
       display: block;
     }
 
-/* CONTENITORI IMMAGINI */
 .fidelity-wrap,
 .catalogo-wrap {
-  padding: 40px 25px 0;
+  padding: 40px 25px 25px;
   min-height: 300px;
+  margin-top: 15px;
 
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-
-  background: transparent;   /* elimina box sotto */
+  align-items: center;
 }
 
-/* IMMAGINI */
+/* immagini entrambe uguali */
 .fidelity-wrap img,
 .catalogo-img {
   width: 88%;
-  max-width: 330px;
+  max-width: 320px;
   height: 220px;
 
+  object-fit: cover;   /* IMPORTANTISSIMO */
+  border-radius: 22px;
+
   display: block;
-  object-fit: cover;
-
-  border-radius: 22px;   /* bordi tondi reali */
-  overflow: hidden;
-
-  border: none;          /* rimuove cornice */
-  padding: 0;            /* rimuove box interno */
-
-  box-shadow: 0 14px 34px rgba(0,0,0,0.22);
 }
-
-/* SOLO CATALOGO se vuoi più grande */
-.catalogo-img {
-  max-width: 360px;
-}
-
-/* IMPORTANTISSIMO:
-se hai un box genitore con background */
-.project-image,
-.card-image,
-.thumb,
-.preview-box,
-.image-wrap {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-   
 
     /* PARTNER */
     #partner {
