@@ -434,28 +434,52 @@
       display: block;
     }
 
-  .fidelity-wrap,
+/* MANTIENE LA PARTE SCURA SOPRA */
+.fidelity-wrap,
 .catalogo-wrap {
-  padding: 40px 25px 25px;
+  padding: 40px 25px 0;
   min-height: 300px;
 
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+
+  background: linear-gradient(
+    180deg,
+    #05070f 0%,
+    #060914 55%,
+    transparent 100%
+  );
 }
 
-/* immagini entrambe uguali */
+/* IMMAGINI */
 .fidelity-wrap img,
 .catalogo-img {
   width: 88%;
-  max-width: 320px;
+  max-width: 330px;
   height: 220px;
 
-  object-fit: cover;   /* IMPORTANTISSIMO */
-  border-radius: 18px;
-
-  box-shadow: 0 10px 30px rgba(0,0,0,0.18);
   display: block;
+  object-fit: cover;
+
+  border-radius: 22px;
+  overflow: hidden;
+
+  border: none;
+  padding: 0;
+
+  box-shadow: 0 14px 34px rgba(0,0,0,0.22);
+}
+
+/* CATALOGO PIÙ LARGO */
+.catalogo-img {
+  max-width: 360px;
+}
+
+/* RIMUOVE SOLO BOX ATTORNO FOTO */
+.catalogo-wrap::before,
+.fidelity-wrap::before {
+  display: none;
 }
    
 
