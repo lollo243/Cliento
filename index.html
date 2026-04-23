@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cliento — Digital Growth Partner</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Outfit:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
   <style>
     :root {
       --ink: #0d0e14;
       --ink2: #161824;
       --card: #1b1e2a;
-      --border: rgba(255,255,255,0.09);
+      --border: rgba(255, 255, 255, 0.09);
       --text: #f3f4f8;
       --muted: #9a9dac;
       --accent: #2563eb;
@@ -19,8 +22,17 @@
       --grad: linear-gradient(135deg, #2563eb, #60a5fa);
     }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       background: var(--ink);
@@ -31,9 +43,16 @@
       overflow-x: hidden;
     }
 
-    ::-webkit-scrollbar { width: 3px; }
-    ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
+    ::-webkit-scrollbar {
+      width: 3px;
+    }
 
+    ::-webkit-scrollbar-thumb {
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    /* NAV */
     nav {
       position: fixed;
       top: 0;
@@ -44,7 +63,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 18px 6%;
-      background: rgba(13,14,20,0.92);
+      background: rgba(13, 14, 20, 0.92);
       backdrop-filter: blur(24px);
       border-bottom: 1px solid var(--border);
     }
@@ -58,7 +77,9 @@
       letter-spacing: -0.01em;
     }
 
-    .logo span { color: var(--accent2); }
+    .logo span {
+      color: var(--accent2);
+    }
 
     .nav-right {
       display: flex;
@@ -74,7 +95,9 @@
       transition: color 0.2s;
     }
 
-    .nav-link:hover { color: var(--text); }
+    .nav-link:hover {
+      color: var(--text);
+    }
 
     .nav-cta {
       background: var(--accent);
@@ -85,15 +108,16 @@
       border-radius: 8px;
       text-decoration: none;
       transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 10px 30px rgba(37,99,235,0.22);
+      box-shadow: 0 10px 30px rgba(37, 99, 235, 0.22);
     }
 
     .nav-cta:hover {
       background: #1d4ed8;
       transform: translateY(-1px);
-      box-shadow: 0 14px 34px rgba(37,99,235,0.32);
+      box-shadow: 0 14px 34px rgba(37, 99, 235, 0.32);
     }
 
+    /* HERO */
     #hero {
       min-height: 100vh;
       display: flex;
@@ -106,17 +130,13 @@
     .hero-bg {
       position: absolute;
       inset: 0;
-      background:
-        radial-gradient(ellipse 55% 50% at 75% 45%, rgba(37,99,235,0.10) 0%, transparent 65%),
-        radial-gradient(ellipse 30% 40% at 10% 70%, rgba(96,165,250,0.06) 0%, transparent 50%);
+      background: radial-gradient(ellipse 55% 50% at 75% 45%, rgba(37, 99, 235, 0.10) 0%, transparent 65%), radial-gradient(ellipse 30% 40% at 10% 70%, rgba(96, 165, 250, 0.06) 0%, transparent 50%);
     }
 
     .hero-grid {
       position: absolute;
       inset: 0;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-image: linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
       background-size: 80px 80px;
       mask-image: radial-gradient(ellipse 70% 70% at 60% 40%, black 0%, transparent 70%);
     }
@@ -130,8 +150,8 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(37,99,235,0.1);
-      border: 1px solid rgba(37,99,235,0.25);
+      background: rgba(37, 99, 235, 0.1);
+      border: 1px solid rgba(37, 99, 235, 0.25);
       color: var(--accent2);
       padding: 6px 14px;
       border-radius: 4px;
@@ -160,7 +180,9 @@
       color: var(--white);
     }
 
-    .accent-text { color: var(--accent2); }
+    .accent-text {
+      color: var(--accent2);
+    }
 
     .hero-sub {
       font-size: 1.1rem;
@@ -189,14 +211,14 @@
       padding: 16px 32px;
       border-radius: 8px;
       text-decoration: none;
-      box-shadow: 0 0 48px rgba(37,99,235,0.22);
+      box-shadow: 0 0 48px rgba(37, 99, 235, 0.22);
       transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
     }
 
     .btn-main:hover {
       transform: translateY(-2px);
       background: #1d4ed8;
-      box-shadow: 0 12px 48px rgba(37,99,235,0.35);
+      box-shadow: 0 12px 48px rgba(37, 99, 235, 0.35);
     }
 
     .btn-ghost {
@@ -210,12 +232,12 @@
       padding: 15px 28px;
       border-radius: 8px;
       text-decoration: none;
-      border: 1px solid rgba(255,255,255,0.12);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       transition: border-color 0.2s, color 0.2s;
     }
 
     .btn-ghost:hover {
-      border-color: rgba(37,99,235,0.4);
+      border-color: rgba(37, 99, 235, 0.4);
       color: var(--accent2);
     }
 
@@ -235,7 +257,9 @@
       margin-bottom: 4px;
     }
 
-    .stat-num span { color: var(--accent2); }
+    .stat-num span {
+      color: var(--accent2);
+    }
 
     .stat-label {
       font-size: 0.78rem;
@@ -251,7 +275,10 @@
       align-self: stretch;
     }
 
-    section { padding: 100px 6%; }
+    /* GENERAL */
+    section {
+      padding: 100px 6%;
+    }
 
     .inner {
       max-width: 1100px;
@@ -309,7 +336,7 @@
     }
 
     .portfolio-card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)), var(--card);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01)), var(--card);
       border: 1px solid var(--border);
       border-radius: 18px;
       overflow: hidden;
@@ -318,17 +345,17 @@
 
     .portfolio-card:hover {
       transform: translateY(-4px);
-      border-color: rgba(96,165,250,0.32);
-      box-shadow: 0 16px 40px rgba(0,0,0,0.22);
+      border-color: rgba(96, 165, 250, 0.32);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
     }
 
-    .portfolio-card.full { grid-column: 1 / -1; }
+    .portfolio-card.full {
+      grid-column: 1 / -1;
+    }
 
     .portfolio-img-wrap {
       position: relative;
-      background:
-        radial-gradient(circle at 80% 85%, rgba(37,99,235,0.10), transparent 24%),
-        linear-gradient(180deg, #11131b 0%, #0d0f16 100%);
+      background: radial-gradient(circle at 80% 85%, rgba(37, 99, 235, 0.10), transparent 24%), linear-gradient(180deg, #11131b 0%, #0d0f16 100%);
       padding: 30px;
       display: flex;
       align-items: center;
@@ -348,8 +375,8 @@
       position: absolute;
       top: 16px;
       left: 16px;
-      background: rgba(37,99,235,0.14);
-      border: 1px solid rgba(96,165,250,0.30);
+      background: rgba(37, 99, 235, 0.14);
+      border: 1px solid rgba(96, 165, 250, 0.30);
       color: var(--accent2);
       font-size: 0.72rem;
       font-weight: 700;
@@ -388,8 +415,8 @@
       max-width: 760px;
       border-radius: 16px;
       overflow: hidden;
-      background: rgba(255,255,255,0.02);
-      border: 1px solid rgba(96,165,250,0.10);
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(96, 165, 250, 0.10);
     }
 
     .ba-side {
@@ -404,8 +431,8 @@
       min-height: 230px;
     }
 
-    .ba-side + .ba-side {
-      border-left: 1px solid rgba(96,165,250,0.16);
+    .ba-side+.ba-side {
+      border-left: 1px solid rgba(96, 165, 250, 0.16);
     }
 
     .ba-label {
@@ -418,12 +445,12 @@
     }
 
     .ba-label.before {
-      background: rgba(123,122,133,0.16);
+      background: rgba(123, 122, 133, 0.16);
       color: #b8b7c2;
     }
 
     .ba-label.after {
-      background: rgba(37,99,235,0.16);
+      background: rgba(37, 99, 235, 0.16);
       color: var(--accent2);
     }
 
@@ -434,36 +461,24 @@
       display: block;
     }
 
-.fidelity-wrap,
-.catalogo-wrap {
-  padding: 40px 25px 25px;
-  min-height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+    .fidelity-wrap,
+    .catalogo-wrap {
+      padding: 40px 25px 25px;
+      min-height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-/* immagini entrambe uguali */
-.fidelity-wrap img,
-.catalogo-img {
-  width: 90%;
-  max-width: 330px;
-  height: 220px;
-  margin-top: 13px;
-  object-fit: cover;   /* IMPORTANTISSIMO */
-  display: block;
-}
-
-    @media (max-width:768px){
-      
-.fidelity-wrap img{
- width:88%;
- max-width:320px;
- height:auto;
- object-fit:contain;
-}
-
-}
+    .fidelity-wrap img,
+    .catalogo-img {
+      width: 90%;
+      max-width: 330px;
+      height: 220px;
+      margin-top: 13px;
+      object-fit: cover;
+      display: block;
+    }
 
     /* PARTNER */
     #partner {
@@ -471,100 +486,93 @@
       border-top: 1px solid var(--border);
     }
 
+    #partner .inner {
+      max-width: 1200px;
+    }
+
     .partner-wrap {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 56px;
-      align-items: start;
-      
+      grid-template-columns: 420px 1fr;
+      gap: 34px;
+      align-items: stretch;
     }
-@media (max-width: 580px) {
-  .catalogo-wrap {
-    padding: 76px 16px 18px;
-    min-height: 190px;
-  }
 
-  .catalogo-img {
-    max-width: 220px;
-    max-height: 145px;
-    padding: 6px;
-  }
-
-  .port-badge {
-    top: 12px;
-    left: 10px;
-    font-size: 0.62rem;
-    padding: 4px 8px;
-  }
-}
     .partner-logo-box {
-      background: var(--card);
+      height: 100%;
+      min-height: 100%;
+      position: sticky;
+      top: 110px;
+      padding: 38px 34px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01)), var(--card);
       border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 40px 32px;
       display: flex;
       flex-direction: column;
+      justify-content: center;
       align-items: center;
-      gap: 20px;
+      gap: 18px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
     }
 
     .partner-logo-box img {
-      max-width: 220px;
-      max-height: 80px;
+      max-width: 240px;
+      max-height: 90px;
       object-fit: contain;
-      filter: brightness(1.1);
+      filter: brightness(1.08);
+    }
+
+    .partner-label-top {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      text-align: center;
     }
 
     .partner-desc {
       color: var(--muted);
-      font-size: 0.92rem;
-      line-height: 1.75;
+      font-size: .92rem;
+      line-height: 1.8;
       text-align: center;
-    }
-
-    .partner-label-top {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--accent2);
-      margin-bottom: 4px;
-      text-align: center;
+      max-width: 320px;
     }
 
     .collab-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      align-content: start;
     }
 
     .collab-card {
-      background: var(--card);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01)), var(--card);
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 22px 24px;
+      border-radius: 14px;
+      padding: 24px;
       display: flex;
       gap: 18px;
       align-items: flex-start;
-      transition: border-color 0.3s, transform 0.3s;
+      transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease;
     }
 
     .collab-card:hover {
-      border-color: rgba(37,99,235,0.25);
-      transform: translateX(4px);
+      transform: translateX(6px);
+      border-color: rgba(96, 165, 250, .34);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, .18);
     }
 
     .collab-icon {
-      width: 44px;
-      height: 44px;
-      background: rgba(37,99,235,0.1);
-      border: 1px solid rgba(37,99,235,0.2);
-      border-radius: 10px;
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      border-radius: 12px;
+      background: rgba(37, 99, 235, .10);
+      border: 1px solid rgba(37, 99, 235, .22);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.1rem;
-      flex-shrink: 0;
+      font-size: 1.08rem;
     }
 
     .collab-card h4 {
@@ -577,8 +585,14 @@
 
     .collab-card p {
       color: var(--muted);
-      font-size: 0.86rem;
-      line-height: 1.65;
+      font-size: .87rem;
+      line-height: 1.7;
+    }
+
+    @media(min-width:1024px) {
+      .collab-grid {
+        grid-auto-rows: 1fr;
+      }
     }
 
     /* PROBLEMA */
@@ -605,15 +619,17 @@
       display: flex;
       align-items: flex-start;
       gap: 16px;
-      background: rgba(255,255,255,0.02);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-left: 3px solid rgba(37,99,235,0.35);
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-left: 3px solid rgba(37, 99, 235, 0.35);
       border-radius: 0 10px 10px 0;
       padding: 18px 20px;
       transition: border-left-color 0.2s;
     }
 
-    .pain-item:hover { border-left-color: var(--accent); }
+    .pain-item:hover {
+      border-left-color: var(--accent);
+    }
 
     .pain-icon {
       font-size: 1.2rem;
@@ -662,7 +678,9 @@
       line-height: 1.75;
     }
 
-    .data-box p strong { color: var(--text); }
+    .data-box p strong {
+      color: var(--text);
+    }
 
     /* SERVIZI */
     #servizi {
@@ -700,10 +718,12 @@
 
     .s-card:hover {
       transform: translateY(-4px);
-      border-color: rgba(37,99,235,0.2);
+      border-color: rgba(37, 99, 235, 0.2);
     }
 
-    .s-card:hover::before { opacity: 1; }
+    .s-card:hover::before {
+      opacity: 1;
+    }
 
     .s-icon {
       font-size: 1.5rem;
@@ -732,10 +752,9 @@
 
     .pkg-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1fr 1fr;
       gap: 22px;
-      align-items: start;
-      max-width: 1000px;
+      max-width: 900px;
       margin: 0 auto;
     }
 
@@ -750,11 +769,42 @@
       transition: transform 0.3s;
     }
 
-    .pkg:hover { transform: translateY(-4px); }
+    .pkg:hover {
+      transform: translateY(-4px);
+    }
 
-    .pkg.hot {
-      border-color: rgba(37,99,235,0.35);
-      background: linear-gradient(155deg, rgba(37,99,235,0.07), rgba(18,18,25,1) 60%);
+    .pkg.growth {
+      border-color: rgba(37, 99, 235, 0.35);
+      background: linear-gradient(155deg, rgba(37, 99, 235, 0.07), rgba(18, 18, 25, 1) 60%);
+    }
+
+    .pkg.expansion {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.06), rgba(96, 165, 250, 0.04), var(--card));
+      border-color: rgba(96, 165, 250, 0.22);
+      flex-direction: row;
+      gap: 48px;
+      align-items: flex-start;
+    }
+
+    .pkg.expansion .expansion-left {
+      flex: 1;
+    }
+
+    .pkg.expansion .expansion-right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .pkg-exp-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 8px;
     }
 
     .hot-badge {
@@ -794,6 +844,7 @@
       color: var(--muted);
       font-size: 0.87rem;
       margin-bottom: 24px;
+      line-height: 1.65;
     }
 
     .pkg-feats {
@@ -833,7 +884,7 @@
     }
 
     .pkg-btn-ghost {
-      border: 1px solid rgba(255,255,255,0.1);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       color: var(--text);
     }
 
@@ -849,7 +900,11 @@
 
     .pkg-btn-main:hover {
       background: #1d4ed8;
-      box-shadow: 0 8px 32px rgba(37,99,235,0.3);
+      box-shadow: 0 8px 32px rgba(37, 99, 235, 0.3);
+    }
+
+    .pkg.expansion h3 {
+      font-size: 1.6rem;
     }
 
     /* STEPS */
@@ -876,15 +931,15 @@
       padding: 32px 0;
     }
 
-    .step + .step {
+    .step+.step {
       border-top: 1px solid var(--border);
     }
 
     .step-n {
       min-width: 48px;
       height: 48px;
-      background: rgba(37,99,235,0.12);
-      border: 1px solid rgba(37,99,235,0.3);
+      background: rgba(37, 99, 235, 0.12);
+      border: 1px solid rgba(37, 99, 235, 0.3);
       border-radius: 10px;
       display: flex;
       align-items: center;
@@ -934,7 +989,9 @@
       margin-bottom: 12px;
     }
 
-    input, textarea, select {
+    input,
+    textarea,
+    select {
       width: 100%;
       background: var(--card);
       border: 1px solid var(--border);
@@ -947,11 +1004,16 @@
       transition: border-color 0.2s;
     }
 
-    input:focus, textarea:focus, select:focus {
-      border-color: rgba(37,99,235,0.45);
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: rgba(37, 99, 235, 0.45);
     }
 
-    input::placeholder, textarea::placeholder { color: var(--muted); }
+    input::placeholder,
+    textarea::placeholder {
+      color: var(--muted);
+    }
 
     textarea {
       height: 110px;
@@ -964,13 +1026,15 @@
       margin-bottom: 12px;
     }
 
-    select option { background: var(--ink2); }
+    select option {
+      background: var(--ink2);
+    }
 
     .privacy-check {
       display: flex;
       align-items: flex-start;
       gap: 10px;
-      margin-bottom: 18px;
+      margin-bottom: 6px;
     }
 
     .privacy-check input[type="checkbox"] {
@@ -1005,12 +1069,19 @@
       font-size: 1rem;
       cursor: pointer;
       transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      margin-top: 12px;
     }
 
     .form-btn:hover {
       background: #1d4ed8;
       transform: translateY(-2px);
-      box-shadow: 0 10px 40px rgba(37,99,235,0.3);
+      box-shadow: 0 10px 40px rgba(37, 99, 235, 0.3);
+    }
+
+    .form-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
     }
 
     .or-divider {
@@ -1031,8 +1102,13 @@
       background: var(--border);
     }
 
-    .or-divider::before { left: 0; }
-    .or-divider::after { right: 0; }
+    .or-divider::before {
+      left: 0;
+    }
+
+    .or-divider::after {
+      right: 0;
+    }
 
     .email-link {
       display: flex;
@@ -1054,6 +1130,26 @@
       color: var(--accent2);
     }
 
+    /* VALIDATION */
+    input.field-error,
+    textarea.field-error,
+    select.field-error {
+      border-color: rgba(239, 68, 68, 0.6) !important;
+    }
+
+    .field-msg {
+      font-size: 0.78rem;
+      color: #f87171;
+      margin-top: 4px;
+      margin-bottom: 8px;
+      display: none;
+    }
+
+    .field-msg.show {
+      display: block;
+    }
+
+    /* FOOTER */
     footer {
       background: var(--ink);
       border-top: 1px solid var(--border);
@@ -1077,7 +1173,9 @@
       color: var(--white);
     }
 
-    .footer-logo span { color: var(--accent2); }
+    .footer-logo span {
+      color: var(--accent2);
+    }
 
     .footer-links {
       display: flex;
@@ -1092,26 +1190,31 @@
       transition: color 0.2s;
     }
 
-    .footer-links a:hover { color: var(--accent2); }
+    .footer-links a:hover {
+      color: var(--accent2);
+    }
 
     footer p {
       color: var(--muted);
       font-size: 0.82rem;
     }
 
+    /* MODAL */
     .modal-overlay {
       display: none;
       position: fixed;
       inset: 0;
       z-index: 500;
-      background: rgba(10,10,15,0.92);
+      background: rgba(10, 10, 15, 0.92);
       backdrop-filter: blur(10px);
       align-items: center;
       justify-content: center;
       padding: 20px;
     }
 
-    .modal-overlay.open { display: flex; }
+    .modal-overlay.open {
+      display: flex;
+    }
 
     .modal {
       background: var(--card);
@@ -1141,7 +1244,8 @@
       color: var(--accent2);
     }
 
-    .modal p, .modal li {
+    .modal p,
+    .modal li {
       color: var(--muted);
       font-size: 0.9rem;
       line-height: 1.8;
@@ -1156,7 +1260,7 @@
       position: absolute;
       top: 16px;
       right: 16px;
-      background: rgba(255,255,255,0.05);
+      background: rgba(255, 255, 255, 0.05);
       border: 1px solid var(--border);
       color: var(--text);
       width: 34px;
@@ -1175,13 +1279,14 @@
       color: var(--accent2);
     }
 
+    /* COOKIE */
     .cookie-banner {
       position: fixed;
       bottom: 0;
       left: 0;
       right: 0;
       z-index: 400;
-      background: rgba(18,18,25,0.97);
+      background: rgba(18, 18, 25, 0.97);
       backdrop-filter: blur(14px);
       border-top: 1px solid var(--border);
       padding: 20px 6%;
@@ -1192,7 +1297,9 @@
       flex-wrap: wrap;
     }
 
-    .cookie-banner.show { display: flex; }
+    .cookie-banner.show {
+      display: flex;
+    }
 
     .cookie-banner p {
       color: var(--muted);
@@ -1234,8 +1341,11 @@
       transition: color 0.2s;
     }
 
-    .cookie-decline:hover { color: var(--text); }
+    .cookie-decline:hover {
+      color: var(--text);
+    }
 
+    /* FLOAT EMAIL */
     .float-email {
       position: fixed;
       bottom: 26px;
@@ -1250,7 +1360,7 @@
       font-size: 0.86rem;
       padding: 14px 22px;
       border-radius: 12px;
-      box-shadow: 0 0 0 1px rgba(123,180,255,0.14), 0 10px 34px rgba(37,99,235,0.33);
+      box-shadow: 0 0 0 1px rgba(123, 180, 255, 0.14), 0 10px 34px rgba(37, 99, 235, 0.33);
       text-decoration: none;
       transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
     }
@@ -1260,6 +1370,7 @@
       background: #1d4ed8;
     }
 
+    /* TOAST */
     #toast {
       position: fixed;
       bottom: 90px;
@@ -1276,8 +1387,15 @@
       transition: all 0.4s;
       pointer-events: none;
       white-space: nowrap;
+      max-width: 90vw;
+      text-align: center;
     }
 
+    #toast.error-toast {
+      background: #dc2626;
+    }
+
+    /* REVEAL */
     .reveal {
       opacity: 0;
       transform: translateY(22px);
@@ -1290,31 +1408,119 @@
     }
 
     @keyframes blink {
-      0%,100% { opacity:1; }
-      50% { opacity:0.15; }
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.15;
+      }
     }
 
-    @media (max-width: 860px) {
-      #problema .inner { grid-template-columns: 1fr; gap: 40px; }
-      .services-grid { grid-template-columns: 1fr 1fr; }
-      .pkg-grid { grid-template-columns: 1fr; max-width: 440px; }
-      .portfolio-grid { grid-template-columns: 1fr; }
-      .portfolio-card.full { grid-column: auto; }
-      .form-row { grid-template-columns: 1fr; }
-      .nav-right .nav-link { display: none; }
-      .partner-wrap { grid-template-columns: 1fr; gap: 32px; }
+    /* RESPONSIVE */
+    @media(max-width:980px) {
+      .partner-wrap {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .partner-logo-box {
+        position: relative;
+        top: auto;
+        min-height: auto;
+        height: auto;
+      }
     }
 
-    @media (max-width: 580px) {
-      section { padding: 72px 5%; }
-      .services-grid { grid-template-columns: 1fr; }
-      h1 { font-size: 2.4rem; }
-      h2 { font-size: 1.9rem; }
-      .float-email .label { display: none; }
-      .footer-inner { flex-direction: column; text-align: center; }
-      .footer-links { justify-content: center; }
-      .modal { padding: 28px 18px; }
-      .hero-stats { gap: 20px; }
+    @media(max-width:860px) {
+      #problema .inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .pkg-grid {
+        grid-template-columns: 1fr;
+        max-width: 440px;
+      }
+
+      .pkg.expansion {
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .pkg.expansion .expansion-right {
+        margin-top: 24px;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .portfolio-card.full {
+        grid-column: auto;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-right .nav-link {
+        display: none;
+      }
+    }
+
+    @media(max-width:768px) {
+      .fidelity-wrap img {
+        width: 88%;
+        max-width: 320px;
+        height: auto;
+        object-fit: contain;
+      }
+    }
+
+    @media(max-width:580px) {
+      section {
+        padding: 72px 5%;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 2.4rem;
+      }
+
+      h2 {
+        font-size: 1.9rem;
+      }
+
+      .float-email .label {
+        display: none;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-links {
+        justify-content: center;
+      }
+
+      .modal {
+        padding: 28px 18px;
+      }
+
+      .hero-stats {
+        gap: 20px;
+      }
 
       .portfolio-img-wrap {
         padding: 24px 18px 18px;
@@ -1349,10 +1555,10 @@
         border-radius: 16px;
         padding: 22px 16px;
         background: #10131c;
-        border: 1px solid rgba(96,165,250,0.12);
+        border: 1px solid rgba(96, 165, 250, 0.12);
       }
 
-      .ba-side + .ba-side {
+      .ba-side+.ba-side {
         border-left: none;
       }
 
@@ -1389,437 +1595,647 @@
         padding: 14px 16px;
         border-radius: 14px;
       }
+
+      .partner-logo-box {
+        padding: 28px 20px;
+        gap: 14px;
+      }
+
+      .partner-logo-box img {
+        max-width: 190px;
+        max-height: 72px;
+      }
+
+      .collab-card {
+        padding: 20px;
+        gap: 14px;
+      }
+
+      .collab-icon {
+        width: 42px;
+        height: 42px;
+        min-width: 42px;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<nav>
-  <a class="logo" href="#">CLIENTO<span>.</span></a>
-  <div class="nav-right">
-    <a class="nav-link" href="#lavori">Portfolio</a>
-    <a class="nav-link" href="#partner">Partnership</a>
-    <a class="nav-link" href="#servizi">Servizi</a>
-    <a class="nav-link" href="#pacchetti">Pacchetti</a>
-    <a class="nav-cta" href="#contatti">Contattaci →</a>
-  </div>
-</nav>
-
-<section id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
-  <div class="hero-inner">
-    <div class="badge"><div class="badge-dot"></div> Digital Growth Partner</div>
-    <h1>Più clienti per<br>la tua <span class="accent-text">attività</span><br>locale.</h1>
-    <p class="hero-sub">Sito web, presenza online, identità visiva — costruiamo tutto il necessario per portare nuovi clienti alla tua attività. Pensa al tuo lavoro, al resto ci pensiamo noi.</p>
-    <div class="ctas">
-      <a href="#contatti" class="btn-main">Voglio più clienti →</a>
-      <a href="#pacchetti" class="btn-ghost">Vedi i pacchetti</a>
+  <nav>
+    <a class="logo" href="#">CLIENTO<span>.</span></a>
+    <div class="nav-right">
+      <a class="nav-link" href="#lavori">Portfolio</a>
+      <a class="nav-link" href="#partner">Partnership</a>
+      <a class="nav-link" href="#servizi">Servizi</a>
+      <a class="nav-link" href="#pacchetti">Pacchetti</a>
+      <a class="nav-cta" href="#contatti">Contattaci →</a>
     </div>
-    <div class="hero-stats">
-      <div>
-        <div class="stat-num">+300<span>%</span></div>
-        <div class="stat-label">Visibilità su Google</div>
-      </div>
-      <div class="stat-sep"></div>
-      <div>
-        <div class="stat-num">48<span>h</span></div>
-        <div class="stat-label">Per essere online</div>
-      </div>
-      <div class="stat-sep"></div>
-      <div>
-        <div class="stat-num">Zero</div>
-        <div class="stat-label">Tecnicismi per te</div>
-      </div>
-    </div>
-  </div>
-</section>
+  </nav>
 
-<section id="lavori" style="padding-top: 90px;">
-  <div class="inner">
-    <div class="sec-label reveal">Portfolio</div>
-    <h2 class="reveal">Lavori <span style="color:var(--accent2)">reali</span>,<br>risultati concreti</h2>
-    <p class="sec-sub reveal">Ecco alcuni esempi del nostro lavoro. Dal restyling del brand alla comunicazione visiva completa.</p>
-
-    <div class="portfolio-grid">
-      <div class="portfolio-card full reveal">
-        <div class="portfolio-img-wrap" style="flex-direction:column; min-height: 280px; padding: 32px;">
-          <div class="port-badge">Restyling identità</div> <br>
-          <div class="before-after">
-            <div class="ba-side">
-              <span class="ba-label before">PRIMA</span>
-              <img src="LogoVecchio.JPG" alt="Logo vecchio I Sapori di Una Volta" style="opacity:0.58;">
-            </div>
-            <div class="ba-side">
-              <span class="ba-label after">DOPO</span>
-              <img src="LogoNuovo.PNG" alt="Logo nuovo I Sapori di Una Volta" style="opacity:0.88;">
-            </div>
-          </div>
-        </div>
-        <div class="portfolio-body">
-          <h3>I Sapori di Una Volta — Restyling Logo</h3>
-          <p>Modernizzazione del logo per un'attività di eccellenze alimentari a Fossano (CN). Brand identity aggiornata mantenendo l'anima artigianale.</p>
-        </div>
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-inner">
+      <div class="badge">
+        <div class="badge-dot"></div> Digital Growth Partner
       </div>
-
-      <div class="portfolio-card reveal">
-        <div class="portfolio-img-wrap fidelity-wrap">
-          <div class="port-badge">Fidelity Card</div> <br>
-          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='190' viewBox='0 0 300 190'%3E%3Crect width='300' height='190' rx='0' fill='%23c8bfb0'/%3E%3Ctext x='150' y='40' text-anchor='middle' font-family='serif' font-size='11' font-weight='bold' fill='%23333'%3EI SAPORI DI UNA VOLTA%3C/text%3E%3Ctext x='150' y='58' text-anchor='middle' font-family='sans-serif' font-size='7' fill='%23555'%3E1 punto ogni 15€ • 5€ sconto al completamento%3C/text%3E%3Crect x='20' y='68' width='260' height='96' rx='4' fill='none' stroke='%23555' stroke-width='1'/%3E%3Cline x1='72' y1='68' x2='72' y2='164' stroke='%23555' stroke-width='0.5'/%3E%3Cline x1='124' y1='68' x2='124' y2='164' stroke='%23555' stroke-width='0.5'/%3E%3Cline x1='176' y1='68' x2='176' y2='164' stroke='%23555' stroke-width='0.5'/%3E%3Cline x1='228' y1='68' x2='228' y2='164' stroke='%23555' stroke-width='0.5'/%3E%3Cline x1='20' y1='116' x2='280' y2='116' stroke='%23555' stroke-width='0.5'/%3E%3C/svg%3E" alt="Fidelity Card I Sapori di Una Volta">
-        </div>
-        <div class="portfolio-body">
-          <h3>Fidelity Card — I Sapori di Una Volta</h3>
-          <p>Design su misura per la carta fedeltà con identità visiva coerente al brand. Realizzata in collaborazione con Tipolitografia Mondino, Fossano.</p>
-        </div>
+      <h1>Più clienti per<br>la tua <span class="accent-text">attività</span><br>locale.</h1>
+      <p class="hero-sub">Sito web, presenza online, identità visiva — costruiamo tutto il necessario per portare nuovi
+        clienti alla tua attività. Pensa al tuo lavoro, al resto ci pensiamo noi.</p>
+      <div class="ctas">
+        <a href="#contatti" class="btn-main">Voglio più clienti →</a>
+        <a href="#pacchetti" class="btn-ghost">Vedi i pacchetti</a>
       </div>
-
-      <div class="portfolio-card reveal">
-        <div class="portfolio-img-wrap catalogo-wrap">
-          <div class="port-badge">Catalogo prodotti</div> <br>
-          <img src="CatalogoPasta.png" alt="Catalogo pasta I Sapori di Una Volta" class="catalogo-img">
-        </div>
-        <div class="portfolio-body">
-          <h3>Cataloghi PDF — I Sapori di Una Volta</h3>
-          <p>Cataloghi digitali e da stampa per l'intera gamma prodotti. Layout curato per uso professionale, stampati da Tipolitografia Mondino.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="partner">
-  <div class="inner">
-    <div class="sec-label reveal">Partnership</div>
-    <h2 class="reveal">Brand con cui <span style="color:var(--accent2)">collaboriamo</span></h2>
-    <p class="sec-sub reveal">Lavoriamo con partner selezionati per offrire ai nostri clienti un servizio completo: dal digitale alla stampa professionale.</p>
-
-    <div class="partner-wrap">
-      <div class="reveal">
-        <div class="partner-logo-box">
-          <div class="partner-label-top">Partner ufficiale</div>
-          <img src="LogoTipografia.png" alt="Tipolitografia Mondino — Fossano" id="mondino-logo">
-          <p class="partner-desc">Tipolitografia Mondino di Fossano (CN) è il nostro partner di riferimento per tutto ciò che riguarda la stampa professionale: bigliettini da visita, cartelloni, locandine, cataloghi e materiali grafici di alta qualità.</p>
-        </div>
-      </div>
-
-      <div>
-        <div class="sec-label reveal" style="margin-bottom: 20px;">Lavori svolti in collaborazione</div>
-        <div class="collab-grid">
-          <div class="collab-card reveal">
-            <div class="collab-icon">🏷️</div>
-            <div>
-              <h4>Restyling Logo — I Sapori di Una Volta</h4>
-              <p>Progettazione e stampa del nuovo logo per l'attività di eccellenze alimentari di Fossano. Identità visiva aggiornata con materiali di alta qualità.</p>
-            </div>
-          </div>
-          <div class="collab-card reveal">
-            <div class="collab-icon">💳</div>
-            <div>
-              <h4>Fidelity Card — I Sapori di Una Volta</h4>
-              <p>Design e stampa professionale della carta fedeltà personalizzata. Grafica coerente al brand, materiale premium prodotto da Mondino.</p>
-            </div>
-          </div>
-          <div class="collab-card reveal">
-            <div class="collab-icon">📄</div>
-            <div>
-              <h4>Cataloghi Prodotti — I Sapori di Una Volta</h4>
-              <p>Impaginazione e stampa dei cataloghi prodotti. Formato professionale per uso sia digitale che cartaceo, con carta di qualità superiore.</p>
-            </div>
-          </div>
-          <div class="collab-card reveal">
-            <div class="collab-icon">🖨️</div>
-            <div>
-              <h4>Bigliettini da visita e Cartelloni</h4>
-              <p>Realizziamo per i nostri clienti qualsiasi materiale promozionale stampato: bigliettini da visita, cartelloni pubblicitari, locandine e brochure.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="problema">
-  <div class="inner">
-    <div>
-      <div class="sec-label reveal">Il problema</div>
-      <h2 class="reveal">Stai perdendo clienti<br><span style="color:var(--accent2)">ogni giorno</span></h2>
-      <p class="sec-sub reveal">Senza una presenza online curata, i tuoi potenziali clienti vanno direttamente dai concorrenti.</p>
-      <ul class="pain-list">
-        <li class="pain-item reveal">
-          <div class="pain-icon">🔍</div>
-          <div class="pain-text"><strong>Non ti trovano su Google</strong><span>Chi cerca la tua attività online non ti vede — e sceglie qualcun altro.</span></div>
-        </li>
-        <li class="pain-item reveal">
-          <div class="pain-icon">💻</div>
-          <div class="pain-text"><strong>Sito web assente o vecchio</strong><span>Un sito lento o brutto su telefono allontana i clienti prima che leggano chi sei.</span></div>
-        </li>
-        <li class="pain-item reveal">
-          <div class="pain-icon">📵</div>
-          <div class="pain-text"><strong>Impossibile contattarti facilmente</strong><span>Senza un sistema di contatto diretto, molti rinunciano e passano oltre.</span></div>
-        </li>
-      </ul>
-    </div>
-    <div class="data-boxes reveal">
-      <div class="data-box">
-        <div class="big-num">76%</div>
-        <p>dei consumatori <strong>cerca online</strong> un'attività locale prima di visitarla. Se non sei presente, perdi <strong>3 clienti su 4</strong>.</p>
-      </div>
-      <div class="data-box" style="border-color: rgba(37,99,235,0.15);">
-        <div class="big-num" style="font-size: 3.4rem;">92%</div>
-        <p>delle ricerche locali avviene <strong>da smartphone</strong>. Se il tuo sito non funziona su telefono, praticamente non esisti.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="servizi">
-  <div class="inner">
-    <div class="sec-label reveal">Cosa facciamo</div>
-    <h2 class="reveal">La tua crescita, <span style="color:var(--accent2)">su misura</span></h2>
-    <p class="sec-sub reveal">Tutto il necessario per trasformare la tua presenza online in un motore di acquisizione clienti.</p>
-    <div class="services-grid">
-      <div class="s-card reveal"><div class="s-icon">🌐</div><h3>Sito web professionale</h3><p>Veloce, bello e ottimizzato per telefono. Costruito per convincere, non solo per essere presente. Con assistenza mensile per modifiche e aggiornamenti.</p></div>
-      <div class="s-card reveal"><div class="s-icon">📱</div><h3>Gestione Instagram + Web</h3><p>Gestiamo la tua pagina Instagram e il sito web insieme, con un piano editoriale coordinato e assistenza mensile dedicata.</p></div>
-      <div class="s-card reveal"><div class="s-icon">🎨</div><h3>Logo & Identità visiva</h3><p>Creiamo il tuo logo e tutta la grafica per l'impresa: bigliettini da visita, cartelloni e materiali stampati in collaborazione con Tipolitografia Mondino.</p></div>
-      <div class="s-card reveal"><div class="s-icon">📍</div><h3>Google Business</h3><p>Ti facciamo comparire su Google Maps quando qualcuno cerca la tua categoria nella tua zona. Più visibilità locale, subito.</p></div>
-      <div class="s-card reveal"><div class="s-icon">📈</div><h3>SEO Locale</h3><p>Saliamo in cima ai risultati di ricerca nella tua città. Più visibilità, più chiamate, più clienti ogni mese.</p></div>
-      <div class="s-card reveal"><div class="s-icon">📊</div><h3>Report mensile</h3><p>Ogni mese sai quante persone ti hanno trovato e quanti contatti hai ricevuto. In italiano semplice, senza tecnicismi.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="pacchetti">
-  <div class="inner">
-    <div class="sec-label reveal" style="justify-content:center; display:flex;">Pacchetti</div>
-    <h2 class="reveal" style="text-align:center;">Tre livelli, <span style="color:var(--accent2)">un obiettivo</span></h2>
-    <p class="sec-sub reveal" style="text-align:center; margin-left:auto; margin-right:auto;">Niente costi nascosti. Scegli il piano adatto alla tua attività.</p>
-    <div class="pkg-grid">
-      <div class="pkg reveal">
-        <div class="pkg-lv">🌱 Base</div>
-        <h3>Presenza Online</h3>
-        <p class="pkg-desc">Parti da zero e mettiti in vetrina sul web.</p>
-        <ul class="pkg-feats">
-          <li>Sito web professionale</li>
-          <li>Presenza su Google ottimizzata</li>
-          <li>Form di contatto attivo</li>
-          <li>Dominio + hosting inclusi</li>
-          <li>Assistenza mensile inclusa</li>
-        </ul>
-        <a href="#contatti" class="pkg-btn pkg-btn-ghost">Inizia da qui</a>
-      </div>
-
-      <div class="pkg hot reveal">
-        <div class="hot-badge">⚡ Più scelto</div>
-        <div class="pkg-lv">🚀 Crescita</div>
-        <h3>Web + Social</h3>
-        <p class="pkg-desc">Sito web e Instagram gestiti insieme, ogni mese.</p>
-        <ul class="pkg-feats">
-          <li>Sito web multi-pagina</li>
-          <li>Gestione pagina Instagram</li>
-          <li>Piano editoriale mensile</li>
-          <li>Google Business ottimizzato</li>
-          <li>Report mensile chiaro</li>
-          <li>Assistenza mensile dedicata</li>
-        </ul>
-        <a href="#contatti" class="pkg-btn pkg-btn-main">Voglio crescere</a>
-      </div>
-
-      <div class="pkg reveal">
-        <div class="pkg-lv">👑 Premium</div>
-        <h3>Brand Completo</h3>
-        <p class="pkg-desc">Web, social, logo e materiali stampati professionali.</p>
-        <ul class="pkg-feats">
-          <li>Tutto del pacchetto Crescita</li>
-          <li>Creazione logo professionale</li>
-          <li>Bigliettini da visita</li>
-          <li>Cartelloni e locandine</li>
-          <li>Stampa con Tip. Mondino</li>
-          <li>Supporto prioritario</li>
-        </ul>
-        <a href="#contatti" class="pkg-btn pkg-btn-ghost">Parliamo</a>
-      </div>
-    </div>
-    <p style="text-align:center; margin-top:26px; color: var(--muted); font-size: 0.88rem;">Non sai quale scegliere? <a href="#contatti" style="color: var(--accent2); font-weight: 600;">Scrivici</a> — ti consigliamo noi, senza impegno.</p>
-  </div>
-</section>
-
-<section id="steps">
-  <div class="inner">
-    <div class="sec-label reveal">Come funziona</div>
-    <h2 class="reveal">Tre passi e sei <span style="color:var(--accent2)">operativo</span></h2>
-    <p class="sec-sub reveal">Nessuna riunione infinita. Partiamo subito.</p>
-    <div class="step-list">
-      <div class="step reveal">
-        <div class="step-n">1</div>
+      <div class="hero-stats">
         <div>
-          <h3>Ci contatti e parliamo</h3>
-          <p>Scrivici via email o compila il form. In 15 minuti capiamo cosa ti serve. Zero tecnicismi, parola.</p>
+          <div class="stat-num">+300<span>%</span></div>
+          <div class="stat-label">Visibilità su Google</div>
         </div>
-      </div>
-      <div class="step reveal">
-        <div class="step-n">2</div>
+        <div class="stat-sep"></div>
         <div>
-          <h3>Costruiamo tutto noi</h3>
-          <p>Sito, social, grafica, contatti: ci pensiamo noi. In 48 ore sei online. Approvi tu il risultato finale.</p>
+          <div class="stat-num">48<span>h</span></div>
+          <div class="stat-label">Per essere online</div>
         </div>
-      </div>
-      <div class="step reveal">
-        <div class="step-n">3</div>
+        <div class="stat-sep"></div>
         <div>
-          <h3>Arrivano i clienti</h3>
-          <p>Ogni mese ricevi un report semplice con i risultati. Noi ottimizziamo, tu incassi.</p>
+          <div class="stat-num">Zero</div>
+          <div class="stat-label">Tecnicismi per te</div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="contatti">
-  <div class="inner">
-    <div class="sec-label reveal" style="justify-content:center; display:flex;">Contatti</div>
-    <h2 class="reveal" style="text-align:center;">Inizia oggi.<br><span style="color:var(--accent2)">Senza impegno.</span></h2>
-    <p style="color: var(--muted); font-size: 1rem; text-align:center;" class="reveal">Compila il form oppure scrivici direttamente. Rispondiamo entro poche ore.</p>
-    <div class="form-wrap reveal">
-      <form onsubmit="handleSubmit(event)">
-        <div class="form-row">
-          <input type="text" placeholder="Il tuo nome *" required />
-          <input type="text" placeholder="Tipo di attività (es. Panetteria)" />
+  <!-- PORTFOLIO -->
+  <section id="lavori" style="padding-top:90px;">
+    <div class="inner">
+      <div class="sec-label reveal">Portfolio</div>
+      <h2 class="reveal">Lavori <span style="color:var(--accent2)">reali</span>,<br>risultati concreti</h2>
+      <p class="sec-sub reveal">Ecco alcuni esempi del nostro lavoro. Dal restyling del brand alla comunicazione visiva
+        completa.</p>
+
+      <div class="portfolio-grid">
+        <div class="portfolio-card full reveal">
+          <div class="portfolio-img-wrap" style="flex-direction:column; min-height:280px; padding:32px;">
+            <div class="port-badge">Restyling identità</div><br>
+            <div class="before-after">
+              <div class="ba-side">
+                <span class="ba-label before">PRIMA</span>
+                <img src="LogoVecchio.JPG" alt="Logo vecchio I Sapori di Una Volta" style="opacity:0.58;">
+              </div>
+              <div class="ba-side">
+                <span class="ba-label after">DOPO</span>
+                <img src="LogoNuovo.PNG" alt="Logo nuovo I Sapori di Una Volta" style="opacity:0.88;">
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-body">
+            <h3>I Sapori di Una Volta — Restyling Logo</h3>
+            <p>Modernizzazione del logo per un'attività di eccellenze alimentari a Fossano (CN). Brand identity
+              aggiornata mantenendo l'anima artigianale.</p>
+          </div>
         </div>
-        <input type="email" placeholder="La tua email *" required style="margin-bottom:12px;" />
-        <select>
-          <option value="" disabled selected>Di cosa hai bisogno?</option>
-          <option>Voglio un sito web professionale</option>
-          <option>Voglio gestire Instagram + sito web</option>
-          <option>Ho bisogno di logo o materiali grafici</option>
-          <option>Voglio apparire su Google Maps</option>
-          <option>Non so da dove iniziare</option>
-        </select>
-        <textarea placeholder="Raccontaci qualcosa di più (opzionale)..."></textarea>
-        <div class="privacy-check">
-          <input type="checkbox" id="privacy" required />
-          <label for="privacy">Ho letto e accetto la <a href="#" onclick="openModal(event,'privacy')">Privacy Policy</a> e acconsento al trattamento dei miei dati personali per ricevere risposta alla mia richiesta.</label>
+
+        <div class="portfolio-card reveal">
+          <div class="portfolio-img-wrap fidelity-wrap">
+            <div class="port-badge">Fidelity Card</div><br>
+            <img
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='190' viewBox='0 0 300 190'%3E%3Crect width='300' height='190' rx='0' fill='%23c8bfb0'/%3E%3Ctext x='150' y='40' text-anchor='middle' font-family='serif' font-size='11' font-weight='bold' fill='%23333'%3EI SAPORI DI UNA VOLTA%3C/text%3E%3Ctext x='150' y='58' text-anchor='middle' font-family='sans-serif' font-size='7' fill='%23555'%3E1 punto ogni 15%E2%82%AC %E2%80%A2 5%E2%82%AC sconto al completamento%3C/text%3E%3Crect x='20' y='68' width='260' height='96' rx='4' fill='none' stroke='%23555' stroke-width='1'/%3E%3Cline x1='72' y1='68' x2='72' y2='164' stroke='%23555' stroke-width='0.5'/%3E%3Cline x1='124' y1='68' x2='124' y2='164' stroke='%23555' stroke-width='0.5'/%3E%3Cline x1='176' y1='68' x2='176' y2='164' stroke='%23555' stroke-width='0.5'/%3E%3Cline x1='228' y1='68' x2='228' y2='164' stroke='%23555' stroke-width='0.5'/%3E%3Cline x1='20' y1='116' x2='280' y2='116' stroke='%23555' stroke-width='0.5'/%3E%3C/svg%3E"
+              alt="Fidelity Card I Sapori di Una Volta">
+          </div>
+          <div class="portfolio-body">
+            <h3>Fidelity Card — I Sapori di Una Volta</h3>
+            <p>Design su misura per la carta fedeltà con identità visiva coerente al brand. Realizzata in collaborazione
+              con Tipolitografia Mondino, Fossano.</p>
+          </div>
         </div>
-        <button type="submit" class="form-btn">📩 Invia la richiesta — è gratuita</button>
-      </form>
-      <div class="or-divider">oppure</div>
-      <a href="mailto:clientostudio26@gmail.com" class="email-link">✉️ clientostudio26@gmail.com</a>
+
+        <div class="portfolio-card reveal">
+          <div class="portfolio-img-wrap catalogo-wrap">
+            <div class="port-badge">Catalogo prodotti</div><br>
+            <img src="CatalogoPasta.png" alt="Catalogo pasta I Sapori di Una Volta" class="catalogo-img">
+          </div>
+          <div class="portfolio-body">
+            <h3>Cataloghi PDF — I Sapori di Una Volta</h3>
+            <p>Cataloghi digitali e da stampa per l'intera gamma prodotti. Layout curato per uso professionale, stampati
+              da Tipolitografia Mondino.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNER -->
+  <section id="partner">
+    <div class="inner">
+      <div class="sec-label reveal">Partnership</div>
+      <h2 class="reveal">Brand con cui <span style="color:var(--accent2)">collaboriamo</span></h2>
+      <p class="sec-sub reveal">Lavoriamo con partner selezionati per offrire ai nostri clienti un servizio completo:
+        dal digitale alla stampa professionale.</p>
+
+      <div class="partner-wrap">
+        <div class="reveal">
+          <div class="partner-logo-box">
+            <div class="partner-label-top">Partner ufficiale</div>
+            <img src="LogoTipografia.png" alt="Tipolitografia Mondino — Fossano">
+            <p class="partner-desc">Tipolitografia Mondino di Fossano (CN) è il nostro partner di riferimento per tutto
+              ciò che riguarda la stampa professionale: bigliettini da visita, cartelloni, locandine, cataloghi e
+              materiali grafici di alta qualità.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="sec-label reveal" style="margin-bottom:20px;">Lavori svolti in collaborazione</div>
+          <div class="collab-grid">
+            <div class="collab-card reveal">
+              <div class="collab-icon">🏷️</div>
+              <div>
+                <h4>Restyling Logo — I Sapori di Una Volta</h4>
+                <p>Progettazione e stampa del nuovo logo per l'attività di eccellenze alimentari di Fossano. Identità
+                  visiva aggiornata con materiali di alta qualità.</p>
+              </div>
+            </div>
+            <div class="collab-card reveal">
+              <div class="collab-icon">💳</div>
+              <div>
+                <h4>Fidelity Card — I Sapori di Una Volta</h4>
+                <p>Design e stampa professionale della carta fedeltà personalizzata. Grafica coerente al brand,
+                  materiale premium prodotto da Mondino.</p>
+              </div>
+            </div>
+            <div class="collab-card reveal">
+              <div class="collab-icon">📄</div>
+              <div>
+                <h4>Cataloghi Prodotti — I Sapori di Una Volta</h4>
+                <p>Impaginazione e stampa dei cataloghi prodotti. Formato professionale per uso sia digitale che
+                  cartaceo, con carta di qualità superiore.</p>
+              </div>
+            </div>
+            <div class="collab-card reveal">
+              <div class="collab-icon">🖨️</div>
+              <div>
+                <h4>Bigliettini da visita e Cartelloni</h4>
+                <p>Realizziamo per i nostri clienti qualsiasi materiale promozionale stampato: bigliettini da visita,
+                  cartelloni pubblicitari, locandine e brochure.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEMA -->
+  <section id="problema">
+    <div class="inner">
+      <div>
+        <div class="sec-label reveal">Il problema</div>
+        <h2 class="reveal">Stai perdendo clienti<br><span style="color:var(--accent2)">ogni giorno</span></h2>
+        <p class="sec-sub reveal">Senza una presenza online curata, i tuoi potenziali clienti vanno direttamente dai
+          concorrenti.</p>
+        <ul class="pain-list">
+          <li class="pain-item reveal">
+            <div class="pain-icon">🔍</div>
+            <div class="pain-text"><strong>Non ti trovano su Google</strong><span>Chi cerca la tua attività online non
+                ti vede — e sceglie qualcun altro.</span></div>
+          </li>
+          <li class="pain-item reveal">
+            <div class="pain-icon">💻</div>
+            <div class="pain-text"><strong>Sito web assente o vecchio</strong><span>Un sito lento o brutto su telefono
+                allontana i clienti prima che leggano chi sei.</span></div>
+          </li>
+          <li class="pain-item reveal">
+            <div class="pain-icon">📵</div>
+            <div class="pain-text"><strong>Impossibile contattarti facilmente</strong><span>Senza un sistema di contatto
+                diretto, molti rinunciano e passano oltre.</span></div>
+          </li>
+        </ul>
+      </div>
+      <div class="data-boxes reveal">
+        <div class="data-box">
+          <div class="big-num">76%</div>
+          <p>dei consumatori <strong>cerca online</strong> un'attività locale prima di visitarla. Se non sei presente,
+            perdi <strong>3 clienti su 4</strong>.</p>
+        </div>
+        <div class="data-box" style="border-color:rgba(37,99,235,0.15);">
+          <div class="big-num" style="font-size:3.4rem;">92%</div>
+          <p>delle ricerche locali avviene <strong>da smartphone</strong>. Se il tuo sito non funziona su telefono,
+            praticamente non esisti.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIZI -->
+  <section id="servizi">
+    <div class="inner">
+      <div class="sec-label reveal">Cosa facciamo</div>
+      <h2 class="reveal">La tua crescita, <span style="color:var(--accent2)">su misura</span></h2>
+      <p class="sec-sub reveal">Tutto il necessario per trasformare la tua presenza online in un motore di acquisizione
+        clienti.</p>
+      <div class="services-grid">
+        <div class="s-card reveal">
+          <div class="s-icon">🌐</div>
+          <h3>Sito web professionale</h3>
+          <p>Veloce, bello e ottimizzato per telefono. Costruito per convincere, non solo per essere presente. Con
+            assistenza mensile per modifiche e aggiornamenti.</p>
+        </div>
+        <div class="s-card reveal">
+          <div class="s-icon">📱</div>
+          <h3>Gestione Instagram + Web</h3>
+          <p>Gestiamo la tua pagina Instagram e il sito web insieme, con un piano editoriale coordinato e assistenza
+            mensile dedicata.</p>
+        </div>
+        <div class="s-card reveal">
+          <div class="s-icon">🎨</div>
+          <h3>Logo & Identità visiva</h3>
+          <p>Creiamo il tuo logo e tutta la grafica per l'impresa: bigliettini da visita, cartelloni e materiali
+            stampati in collaborazione con Tipolitografia Mondino.</p>
+        </div>
+        <div class="s-card reveal">
+          <div class="s-icon">📍</div>
+          <h3>Google Business</h3>
+          <p>Ti facciamo comparire su Google Maps quando qualcuno cerca la tua categoria nella tua zona. Più visibilità
+            locale, subito.</p>
+        </div>
+        <div class="s-card reveal">
+          <div class="s-icon">📈</div>
+          <h3>SEO Locale</h3>
+          <p>Saliamo in cima ai risultati di ricerca nella tua città. Più visibilità, più chiamate, più clienti ogni
+            mese.</p>
+        </div>
+        <div class="s-card reveal">
+          <div class="s-icon">📊</div>
+          <h3>Report mensile</h3>
+          <p>Ogni mese sai quante persone ti hanno trovato e quanti contatti hai ricevuto. In italiano semplice, senza
+            tecnicismi.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACCHETTI -->
+  <section id="pacchetti">
+    <div class="inner">
+      <div class="sec-label reveal" style="justify-content:center; display:flex;">Pacchetti</div>
+      <h2 class="reveal" style="text-align:center;">Tre livelli, <span style="color:var(--accent2)">un obiettivo</span>
+      </h2>
+      <p class="sec-sub reveal" style="text-align:center; margin-left:auto; margin-right:auto;">Niente costi nascosti.
+        Scegli il piano adatto alla tua attività.</p>
+
+      <div class="pkg-grid">
+
+        <!-- START -->
+        <div class="pkg start reveal">
+          <div class="pkg-lv">🌱 Start</div>
+          <h3>Presenza Essenziale</h3>
+          <div class="pkg-desc">Il punto di partenza per essere finalmente trovati online in modo credibile.</div>
+          <ul class="pkg-feats">
+            <li>Sito web professionale</li>
+            <li>Ottimizzazione Google base</li>
+            <li>Form contatti intelligente</li>
+            <li>Dominio + hosting</li>
+            <li>1 mese di assistenza incluso</li>
+          </ul>
+          <a href="#contatti" class="pkg-btn pkg-btn-ghost">👉 Inizia a costruire</a>
+        </div>
+
+        <!-- GROWTH -->
+        <div class="pkg growth reveal">
+          <div class="hot-badge">Più scelto dalle aziende</div>
+          <div class="pkg-lv">⚡ Growth</div>
+          <h3>Presenza Attiva</h3>
+          <div class="pkg-desc">Il sistema completo per attrarre clienti ogni mese.</div>
+          <ul class="pkg-feats">
+            <li>Sito web strategico multi-pagina</li>
+            <li>Instagram gestito in modo coerente</li>
+            <li>Piano contenuti mensile</li>
+            <li>Google Business ottimizzato</li>
+            <li>Report performance chiaro</li>
+            <li>Supporto 3 mesi</li>
+          </ul>
+          <a href="#contatti" class="pkg-btn pkg-btn-main">👉 Inizia a crescere</a>
+        </div>
+
+        <!-- ESPANSIONE BRAND – full width -->
+        <div class="pkg expansion reveal">
+          <div class="expansion-left">
+            <div class="pkg-exp-label">💎 Espansione del Brand</div>
+            <h3>Identità e Materiali Offline</h3>
+            <div class="pkg-desc">Non un pacchetto standard. È il completamento della tua identità visiva. Perfetto per
+              chi vuole un brand forte anche offline.</div>
+          </div>
+          <div class="expansion-right">
+            <ul class="pkg-feats">
+              <li>Logo professionale o restyling brand</li>
+              <li>Biglietti da visita</li>
+              <li>Grafica coordinata per social e stampa</li>
+              <li>Locandine e materiali pubblicitari</li>
+              <li>Design personalizzato su misura</li>
+            </ul>
+            <a href="#contatti" class="pkg-btn pkg-btn-ghost">👉 Costruiamo il tuo brand</a>
+          </div>
+        </div>
+
+      </div>
+      <p style="text-align:center; margin-top:26px; color:var(--muted); font-size:0.88rem;">Non sai quale scegliere? <a
+          href="#contatti" style="color:var(--accent2); font-weight:600;">Scrivici</a> — ti consigliamo noi, senza
+        impegno.</p>
+    </div>
+  </section>
+
+  <!-- STEPS -->
+  <section id="steps">
+    <div class="inner">
+      <div class="sec-label reveal">Come funziona</div>
+      <h2 class="reveal">Tre passi e sei <span style="color:var(--accent2)">operativo</span></h2>
+      <p class="sec-sub reveal">Nessuna riunione infinita. Partiamo subito.</p>
+      <div class="step-list">
+        <div class="step reveal">
+          <div class="step-n">1</div>
+          <div>
+            <h3>Ci contatti e parliamo</h3>
+            <p>Scrivici via email o compila il form. In 15 minuti capiamo cosa ti serve. Zero tecnicismi, parola.</p>
+          </div>
+        </div>
+        <div class="step reveal">
+          <div class="step-n">2</div>
+          <div>
+            <h3>Costruiamo tutto noi</h3>
+            <p>Sito, social, grafica, contatti: ci pensiamo noi. In 48 ore sei online. Approvi tu il risultato finale.
+            </p>
+          </div>
+        </div>
+        <div class="step reveal">
+          <div class="step-n">3</div>
+          <div>
+            <h3>Arrivano i clienti</h3>
+            <p>Ogni mese ricevi un report semplice con i risultati. Noi ottimizziamo, tu incassi.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATTI -->
+  <section id="contatti">
+    <div class="inner">
+      <div class="sec-label reveal" style="justify-content:center; display:flex;">Contatti</div>
+      <h2 class="reveal" style="text-align:center;">Inizia oggi.<br><span style="color:var(--accent2)">Senza
+          impegno.</span></h2>
+      <p style="color:var(--muted); font-size:1rem; text-align:center;" class="reveal">Compila il form oppure scrivici
+        direttamente. Rispondiamo entro poche ore.</p>
+      <div class="form-wrap reveal">
+        <form id="contactForm" novalidate>
+          <div class="form-row">
+            <div>
+              <input type="text" id="nome" placeholder="Il tuo nome *" required />
+              <div class="field-msg" id="msg-nome">Inserisci il tuo nome.</div>
+            </div>
+            <input type="text" id="attivita" placeholder="Tipo di attività (es. Panetteria)" />
+          </div>
+          <input type="email" id="email" placeholder="La tua email * (es. mario@email.it)" required
+            style="margin-bottom:4px;" />
+          <div class="field-msg" id="msg-email">Inserisci un indirizzo email valido.</div>
+          <select id="servizio" style="margin-top:8px;">
+            <option value="" disabled selected>Di cosa hai bisogno?</option>
+            <option>Voglio un sito web professionale</option>
+            <option>Voglio gestire Instagram + sito web</option>
+            <option>Ho bisogno di logo o materiali grafici</option>
+            <option>Voglio apparire su Google Maps</option>
+            <option>Non so da dove iniziare</option>
+          </select>
+          <textarea id="messaggio" placeholder="Raccontaci qualcosa di più (opzionale)..."></textarea>
+          <div class="privacy-check">
+            <input type="checkbox" id="privacy" required />
+            <label for="privacy">Ho letto e accetto la <a href="#" onclick="openModal(event,'privacy')">Privacy
+                Policy</a> e acconsento al trattamento dei miei dati personali per ricevere risposta alla mia
+              richiesta.</label>
+          </div>
+          <div class="field-msg" id="msg-privacy">Devi accettare la Privacy Policy per continuare.</div>
+          <button type="submit" class="form-btn" id="submitBtn">📩 Invia la richiesta — è gratuita</button>
+        </form>
+        <div class="or-divider">oppure</div>
+        <a href="mailto:clientostudio26@gmail.com" class="email-link">✉️ clientostudio26@gmail.com</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">CLIENTO<span>.</span></div>
+        <p style="margin-top:4px;">Digital Growth Partner per attività locali</p>
+      </div>
+      <div class="footer-links">
+        <a href="#lavori">Portfolio</a>
+        <a href="#partner">Partnership</a>
+        <a href="#servizi">Servizi</a>
+        <a href="#" onclick="openModal(event,'privacy')">Privacy Policy</a>
+        <a href="#" onclick="openModal(event,'cookie')">Cookie Policy</a>
+        <a href="mailto:clientostudio26@gmail.com">clientostudio26@gmail.com</a>
+      </div>
+      <p>© 2025 Cliento. Tutti i diritti riservati.</p>
+    </div>
+  </footer>
+
+  <a href="mailto:clientostudio26@gmail.com" class="float-email">
+    <span>✉️</span>
+    <span class="label">Scrivici subito</span>
+  </a>
+
+  <div id="toast"></div>
+
+  <!-- COOKIE BANNER -->
+  <div class="cookie-banner" id="cookieBanner">
+    <p>Utilizziamo cookie tecnici per il corretto funzionamento del sito. Nessun dato viene venduto a terzi. Leggi la <a
+        href="#" onclick="openModal(event,'cookie')">Cookie Policy</a> e la <a href="#"
+        onclick="openModal(event,'privacy')">Privacy Policy</a>.</p>
+    <div class="cookie-btns">
+      <button class="cookie-decline" onclick="closeCookie()">Solo necessari</button>
+      <button class="cookie-accept" onclick="closeCookie()">Accetto tutto</button>
     </div>
   </div>
-</section>
 
-<footer>
-  <div class="footer-inner">
-    <div>
-      <div class="footer-logo">CLIENTO<span>.</span></div>
-      <p style="margin-top:4px;">Digital Growth Partner per attività locali</p>
+  <!-- MODAL PRIVACY -->
+  <div class="modal-overlay" id="modal-privacy">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('privacy')">✕</button>
+      <h3>Privacy Policy</h3>
+      <p><strong>Titolare del trattamento:</strong> Cliento — Digital Growth Partner<br>Email: clientostudio26@gmail.com
+      </p>
+      <h4>Dati raccolti</h4>
+      <p>Raccogliamo esclusivamente i dati forniti volontariamente tramite il form di contatto: nome, email, tipo di
+        attività e messaggio. Vengono utilizzati unicamente per rispondere alla tua richiesta.</p>
+      <h4>Base giuridica</h4>
+      <p>Il trattamento si basa sul consenso espresso dall'utente (art. 6, par. 1, lett. a del GDPR) al momento
+        dell'invio del form di contatto.</p>
+      <h4>Conservazione dei dati</h4>
+      <p>I dati sono conservati per il tempo strettamente necessario a gestire la richiesta e, successivamente, per un
+        massimo di 12 mesi, salvo diverso accordo scritto.</p>
+      <h4>I tuoi diritti</h4>
+      <p>Hai diritto di accedere, rettificare, cancellare i tuoi dati, opporti al trattamento e richiedere la
+        portabilità. Per esercitare questi diritti scrivi a: <strong>clientostudio26@gmail.com</strong></p>
     </div>
-    <div class="footer-links">
-      <a href="#lavori">Portfolio</a>
-      <a href="#partner">Partnership</a>
-      <a href="#servizi">Servizi</a>
-      <a href="#" onclick="openModal(event,'privacy')">Privacy Policy</a>
-      <a href="#" onclick="openModal(event,'cookie')">Cookie Policy</a>
-      <a href="mailto:clientostudio26@gmail.com">clientostudio26@gmail.com</a>
+  </div>
+
+  <!-- MODAL COOKIE -->
+  <div class="modal-overlay" id="modal-cookie">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('cookie')">✕</button>
+      <h3>Cookie Policy</h3>
+      <p>Questo sito utilizza cookie tecnici necessari per il corretto funzionamento. Non utilizziamo cookie di
+        profilazione né condividiamo dati con inserzionisti.</p>
+      <h4>Cookie tecnici (necessari)</h4>
+      <p>Indispensabili per il funzionamento del sito. Non richiedono consenso e non raccolgono dati personali
+        identificabili.</p>
     </div>
-    <p>© 2025 Cliento. Tutti i diritti riservati.</p>
   </div>
-</footer>
 
-<a href="mailto:clientostudio26@gmail.com" class="float-email">
-  <span>✉️</span>
-  <span class="label">Scrivici subito</span>
-</a>
+  <script>
+    /* FIX: al reload rimuove l'hash dall'URL e torna in cima alla pagina */
+    if (window.location.hash) {
+      history.replaceState(null, '', window.location.pathname);
+      window.scrollTo(0, 0);
+    }
 
-<div id="toast">✅ Richiesta inviata! Ti contatteremo presto.</div>
+    /* SCROLL REVEAL */
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {if (e.isIntersecting) e.target.classList.add('visible');});
+    }, {threshold: 0.08});
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-<div class="cookie-banner" id="cookieBanner">
-  <p>Utilizziamo cookie tecnici per il corretto funzionamento del sito. Nessun dato viene venduto a terzi. Leggi la <a href="#" onclick="openModal(event,'cookie')">Cookie Policy</a> e la <a href="#" onclick="openModal(event,'privacy')">Privacy Policy</a>.</p>
-  <div class="cookie-btns">
-    <button class="cookie-decline" onclick="closeCookie()">Solo necessari</button>
-    <button class="cookie-accept" onclick="closeCookie()">Accetto tutto</button>
-  </div>
-</div>
-
-<div class="modal-overlay" id="modal-privacy">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal('privacy')">✕</button>
-    <h3>Privacy Policy</h3>
-    <p><strong>Titolare del trattamento:</strong> Cliento — Digital Growth Partner<br>Email: clientostudio26@gmail.com</p>
-    <h4>Dati raccolti</h4>
-    <p>Raccogliamo esclusivamente i dati forniti volontariamente tramite il form di contatto: nome, email, tipo di attività e messaggio. Vengono utilizzati unicamente per rispondere alla tua richiesta.</p>
-    <h4>Base giuridica</h4>
-    <p>Il trattamento si basa sul consenso espresso dall'utente (art. 6, par. 1, lett. a del GDPR) al momento dell'invio del form di contatto.</p>
-    <h4>Conservazione dei dati</h4>
-    <p>I dati sono conservati per il tempo strettamente necessario a gestire la richiesta e, successivamente, per un massimo di 12 mesi, salvo diverso accordo scritto.</p>
-    <h4>I tuoi diritti</h4>
-    <p>Hai diritto di accedere, rettificare, cancellare i tuoi dati, opporti al trattamento e richiedere la portabilità. Per esercitare questi diritti scrivi a: <strong>clientostudio26@gmail.com</strong></p>
-  </div>
-</div>
-
-<div class="modal-overlay" id="modal-cookie">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal('cookie')">✕</button>
-    <h3>Cookie Policy</h3>
-    <p>Questo sito utilizza cookie tecnici necessari per il corretto funzionamento. Non utilizziamo cookie di profilazione né condividiamo dati con inserzionisti.</p>
-    <h4>Cookie tecnici (necessari)</h4>
-    <p>Indispensabili per il funzionamento del sito. Non richiedono consenso e non raccolgono dati personali identificabili.</p>
-  </div>
-</div>
-
-<script>
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) e.target.classList.add('visible');
+    /* NAV SCROLL */
+    window.addEventListener('scroll', () => {
+      document.querySelector('nav').style.background =
+        window.scrollY > 60 ? 'rgba(13,14,20,0.98)' : 'rgba(13,14,20,0.92)';
     });
-  }, { threshold: 0.08 });
 
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    /* TOAST */
+    function showToast(msg, isError) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.className = isError ? 'error-toast' : '';
+      toast.style.opacity = '1';
+      toast.style.transform = 'translateX(-50%) translateY(0)';
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateX(-50%) translateY(16px)';
+      }, 4500);
+    }
 
-  window.addEventListener('scroll', () => {
-    document.querySelector('nav').style.background =
-      window.scrollY > 60 ? 'rgba(13,14,20,0.98)' : 'rgba(13,14,20,0.92)';
-  });
+    /* EMAIL VALIDATION */
+    function isValidEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.trim());
+    }
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    const toast = document.getElementById('toast');
-    toast.style.opacity = '1';
-    toast.style.transform = 'translateX(-50%) translateY(0)';
-    setTimeout(() => {
-      toast.style.opacity = '0';
-      toast.style.transform = 'translateX(-50%) translateY(16px)';
-    }, 3500);
-    e.target.reset();
-  }
+    /* FIELD ERROR */
+    function setFieldError(fieldId, msgId, show) {
+      const field = document.getElementById(fieldId);
+      const msg = document.getElementById(msgId);
+      field.classList.toggle('field-error', show);
+      msg.classList.toggle('show', show);
+    }
 
-  function openModal(e, id) {
-    e.preventDefault();
-    document.getElementById('modal-' + id).classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
+    /* FORM SUBMIT */
+    document.getElementById('contactForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
 
-  function closeModal(id) {
-    document.getElementById('modal-' + id).classList.remove('open');
-    document.body.style.overflow = '';
-  }
+      const nome = document.getElementById('nome').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const attivita = document.getElementById('attivita').value.trim();
+      const servizio = document.getElementById('servizio').value;
+      const messaggio = document.getElementById('messaggio').value.trim();
+      const privacy = document.getElementById('privacy').checked;
 
-  document.querySelectorAll('.modal-overlay').forEach(m => {
-    m.addEventListener('click', e => {
-      if (e.target === m) {
-        m.classList.remove('open');
-        document.body.style.overflow = '';
+      let valid = true;
+
+      if (!nome) {setFieldError('nome', 'msg-nome', true); valid = false;}
+      else {setFieldError('nome', 'msg-nome', false);}
+
+      if (!isValidEmail(email)) {setFieldError('email', 'msg-email', true); valid = false;}
+      else {setFieldError('email', 'msg-email', false);}
+
+      if (!privacy) {setFieldError('privacy', 'msg-privacy', true); valid = false;}
+      else {setFieldError('privacy', 'msg-privacy', false);}
+
+      if (!valid) return;
+
+      const btn = document.getElementById('submitBtn');
+      btn.disabled = true;
+      btn.textContent = '⏳ Invio in corso...';
+
+      const payload = {
+        access_key: '5eebdc56-882d-4775-ba27-58ae3e8043f3',
+        subject: 'Nuova richiesta da ' + nome + ' — Cliento',
+        from_name: 'Cliento Sito Web',
+        replyto: email,
+        Nome: nome,
+        Email: email,
+        Attivita: attivita || 'Non specificata',
+        Servizio: servizio || 'Non specificato',
+        Messaggio: messaggio || 'Nessun messaggio aggiuntivo',
+        botcheck: ''
+      };
+
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+        if (data.success) {
+          showToast('✅ Richiesta inviata! Ti risponderemo al più presto.', false);
+          document.getElementById('contactForm').reset();
+        } else {
+          showToast('❌ Errore nell\'invio. Scrivici direttamente via email.', true);
+        }
+      } catch (err) {
+        showToast('❌ Connessione fallita. Riprova tra poco.', true);
+      }
+
+      btn.disabled = false;
+      btn.textContent = '📩 Invia la richiesta — è gratuita';
+    });
+
+    /* MODALS */
+    function openModal(e, id) {
+      e.preventDefault();
+      document.getElementById('modal-' + id).classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(id) {
+      document.getElementById('modal-' + id).classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.modal-overlay').forEach(m => {
+      m.addEventListener('click', e => {
+        if (e.target === m) {m.classList.remove('open'); document.body.style.overflow = '';}
+      });
+    });
+
+    /* COOKIE */
+    window.addEventListener('load', () => {
+      try {
+        if (!localStorage.getItem('cookie_ok')) {
+          document.getElementById('cookieBanner').classList.add('show');
+        }
+      } catch (err) {
+        document.getElementById('cookieBanner').classList.add('show');
       }
     });
-  });
 
-  window.addEventListener('load', () => {
-    document.getElementById('cookieBanner').classList.add('show');
-  });
+    function closeCookie() {
+      try {localStorage.setItem('cookie_ok', '1');} catch (err) { }
+      document.getElementById('cookieBanner').classList.remove('show');
+    }
+  </script>
 
-  function closeCookie() {
-    document.getElementById('cookieBanner').classList.remove('show');
-  }
-</script>
 </body>
+
 </html>
